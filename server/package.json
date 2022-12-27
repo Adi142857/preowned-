@@ -1,12 +1,12 @@
 {
-  "name": "book-by-3",
+  "name": "preowned-backend",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "set DEBUG=backend:* & nodemon index.js"
   },
-  "author": "Prathamesh",
+  "author": "Aditya",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",

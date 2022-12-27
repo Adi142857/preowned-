@@ -2,7 +2,7 @@
   <v-dialog v-model="$store.state.formDialog" max-width="500px">
     <v-card>
       <v-card-title>
-        <span class="headline">Add a new book</span>
+        <span class="headline">Add a new product</span>
       </v-card-title>
       <v-card-text>
         <v-form ref="form">
@@ -92,7 +92,7 @@
 </template>
 
 <script>
-import imageUploadService from '@/services/imageUploadService';
+import imageUploadService from '@/services/ImgUploadService';
 export default {
   props: {
     isEdit: {
@@ -117,7 +117,7 @@ export default {
       rules: [(v) => !!v || 'Field is required'],
       phoneRules: [
         (v) => !!v || 'Phone number is required',
-        (v) => v.length >= 10 || 'Phone number must be at least 10 digits',
+        (v) => v.length >= 3 || 'Phone number must be at least 10 digits',
       ],
       title: '',
       author: '',
@@ -172,6 +172,11 @@ export default {
 
 <style scoped>
 .headline {
-  color: #f50057;
+  color: #004;
+}
+
+.v-application .red{
+    background-color: rgb(248, 248, 252) !important;
+    color: #004 !important;
 }
 </style>

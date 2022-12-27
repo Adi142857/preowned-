@@ -16,7 +16,7 @@
       <v-list dense>
         <v-list-item link @click="$router.push('/')">
           <v-list-item-icon class="justify-center">
-            <v-icon>mdi-school-outline</v-icon>
+            <v-icon>mdi-home</v-icon>
           </v-list-item-icon>
           <v-list-item-content>
             <v-list-item-title class="subtitile-1"> Home</v-list-item-title>
@@ -79,11 +79,12 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar app class="px-6" :class="{ expand: false }" color="black">
+    <v-app-bar app class="px-6" :class="{ expand: false }" color="black" height="60px">
       <v-toolbar-title>
         <v-img
-          src="@/assets/logo.svg"
-          max-width="50px"
+          src="@/assets/preowned-.png"
+          max-width="100px"
+          max-height="100px"
           @click="$router.push('/')"
           style="cursor: pointer"
         ></v-img>
@@ -105,8 +106,8 @@
         <v-btn text @click="$router.push('/requirements')">
           <span class="mr-2 white--text">Requirements</span>
         </v-btn>
-        <v-btn text @click="$router.push('/syllabus')">
-          <span class="mr-2 white--text">Syllabus</span>
+        <v-btn text @click="$router.push('/details')">
+          <span class="mr-2 white--text">Services</span>
         </v-btn>
         <!-- avatar -->
       
@@ -180,6 +181,9 @@ export default {
 
 .theme--dark.v-navigation-drawer .v-divider {
     border-color: rgb(255 255 255);
+}
+.v-btn.v-size--default {
+    font-size: 0.799rem;
 }
 .expand {
   height: 80px !important;

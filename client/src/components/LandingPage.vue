@@ -4,9 +4,9 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-xl-5">
-                <div class="text-container">
-                    <h1 class="h1-large">We connect buyers and sellers</h1>
-                    <p class="p-large">Find influencers to buy and sell products in India's largest online C2C marketplace, connecting buyers with suppliers.</p>
+                <div class="text-container" >
+                    <h1 class="h1-large text-left">We connect buyers and sellers</h1>
+                    <p class="p-large text-left">Find influencers to buy and sell products in India's largest online C2C marketplace, connecting buyers with suppliers.</p>
                     <a class="btn-solid-lg" href="#services">Offered services</a>
                 </div>
             </div> 
@@ -23,26 +23,26 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2>Explore our services</h2>
+                    <h2 class="explore">Explore our services</h2>
                 </div> 
             </div>
             <div class="row">
-                <div class="col-lg-12">                    
+                <div class="col-lg-12 col-md-12">                    
                     <div class="card">
                         <div>
                           <v-card class="mx-auto" max-width="344">
-                            <v-img src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg" height="200px"></v-img>
-                            <v-card-title>Top western road trips</v-card-title>
-                            <v-card-subtitle>1,000 miles of wonder</v-card-subtitle>
+                            <v-img src="https://img.freepik.com/free-vector/chatbot-customer-service-abstract-concept_335657-3037.jpg?w=740&t=st=1672061923~exp=1672062523~hmac=eea91f4c71f9c44c6466d31eb09556b8ae80b8083dd808e6a94e9655a953037f" height="200px"></v-img>
+                            <v-card-title>Top products and exchanges</v-card-title>
+                            <!-- <v-card-subtitle>1,000 miles of wonder</v-card-subtitle> -->
                             <v-card-actions>
-                              <v-btn  color="orange lighten-2" text>Explore</v-btn>
+                              <v-btn  color="#1A237E" text>Explore</v-btn>
                               <v-spacer/>
-                              <v-btn icon @click="show = !show">
-                              <v-icon>{{ show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
+                              <v-btn icon @click="show1 = !show1">
+                              <v-icon>{{ show1 ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
                               </v-btn>
                             </v-card-actions>
                             <v-expand-transition>
-                              <div v-show="show">
+                              <div v-show="show1">
                                 <v-divider/>
                                 <v-card-text>
                                   I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier, not with all the bed making you'll be doing. Then we'll go with that data file! Hey, you add a one and two zeros to that or we walk! You're going to do his laundry? I've got to find a way to escape.
@@ -55,18 +55,18 @@
                     <div class="card">
                       <div>
                           <v-card class="mx-auto" max-width="344">
-                            <v-img src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg" height="200px"></v-img>
-                            <v-card-title>Top western road trips</v-card-title>
+                            <v-img src="https://img.freepik.com/free-vector/list-concept-illustration_114360-1320.jpg?w=740&t=st=1672062040~exp=1672062640~hmac=a0c17fbdef3a9030109d6d331d0b6d13806d52e4dc85f0fb59863087200c302b" height="200px"></v-img>
+                            <v-card-title>Upload your requirements</v-card-title>
                             <v-card-subtitle>1,000 miles of wonder</v-card-subtitle>
                             <v-card-actions>
-                              <v-btn  color="orange lighten-2" text>Explore</v-btn>
+                              <v-btn  color="#1A237E" text>Explore</v-btn>
                               <v-spacer/>
-                              <v-btn icon @click="show = !show">
-                              <v-icon>{{ show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
+                              <v-btn icon @click="show2 = !show2">
+                              <v-icon>{{ show2 ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
                               </v-btn>
                             </v-card-actions>
                             <v-expand-transition>
-                              <div v-show="show">
+                              <div v-show="show2">
                                 <v-divider/>
                                 <v-card-text>
                                   I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier, not with all the bed making you'll be doing. Then we'll go with that data file! Hey, you add a one and two zeros to that or we walk! You're going to do his laundry? I've got to find a way to escape.
@@ -80,18 +80,18 @@
                     <div class="card">
                       <div>
                           <v-card class="mx-auto" max-width="344">
-                            <v-img src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg" height="200px"></v-img>
-                            <v-card-title>Top western road trips</v-card-title>
+                            <v-img src="https://img.freepik.com/free-vector/teamwork-concept-landing-page_52683-20165.jpg?w=740&t=st=1672130327~exp=1672130927~hmac=576d1682f5b9169d48e84b1b2cbd4492bd063d4c06f0cc8971c8a5f8e208860d" height="200px"></v-img>
+                            <v-card-title>About us</v-card-title>
                             <v-card-subtitle>1,000 miles of wonder</v-card-subtitle>
                             <v-card-actions>
-                              <v-btn  color="orange lighten-2" text>Explore</v-btn>
+                              <v-btn  color="#1A237E" text>Explore</v-btn>
                               <v-spacer/>
-                              <v-btn icon @click="show = !show">
-                              <v-icon>{{ show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
+                              <v-btn icon @click="show3 = !show3">
+                              <v-icon>{{ show3 ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
                               </v-btn>
                             </v-card-actions>
                             <v-expand-transition>
-                              <div v-show="show">
+                              <div v-show="show3">
                                 <v-divider/>
                                 <v-card-text>
                                   I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier, not with all the bed making you'll be doing. Then we'll go with that data file! Hey, you add a one and two zeros to that or we walk! You're going to do his laundry? I've got to find a way to escape.
@@ -107,7 +107,7 @@
         </div>
     </div> 
     <div>
-        <footer class="text-center text-white" style="background-color: #1A237E;">
+        <footer class="text-center text-white" style="background-color: rgb(22 54 145);">
   <!-- Grid container -->
   <div class="container pt-4">
     <!-- Section: Social media -->
@@ -128,15 +128,6 @@
         role="button"
         data-mdb-ripple-color="dark"
         ><i class="fab fa-twitter"></i
-      ></a>
-
-      <!-- Google -->
-      <a
-        class="btn btn-link btn-floating btn-lg text-white m-1"
-        href="#!"
-        role="button"
-        data-mdb-ripple-color="dark"
-        ><i class="fab fa-google"></i
       ></a>
 
       <!-- Instagram -->
@@ -172,7 +163,7 @@
     India's best selling site for preowned services
   </div>
   <!-- Copyright -->
-  <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+  <div class="text-center text-white p-3" style="background-color: #1A237E;">
     © 2020 Copyright:
     <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
   </div>
@@ -189,10 +180,19 @@
 export default {
     name: 'LandingPage',
     data: () => ({
-      show: false,
+      show1: false,
+      show2: false,
+      show3: false,
     }),
 }
 </script>
-<style lang="">
-    
+<style>
+body{
+    font-size: 0.85rem;
+}
+.explore{
+  text-align: center;
+  font-weight: 600;
+}
+
 </style>

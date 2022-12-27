@@ -1,14 +1,14 @@
 <template>
-    <v-container class="mt-10 profile" fluid style="background-color: #000000">
+    <v-container class="profile" fluid style="background-color: #000000">
       <v-row
         align="center"
-        class="mt-5 text-center px-3"
+        class="text-center px-3"
         style="background-color: #131418; border-radius: 10px"
       >
         <v-col cols="12" md="6">
           <v-row align="center">
             <v-col cols="12" md="4">
-              <v-avatar size="150" color="brown">
+              <v-avatar size="150" color="blue">
                 <span class="white--text text-h2">{{ initials }}</span>
               </v-avatar>
             </v-col>
@@ -34,7 +34,12 @@
           <v-container v-if="books.length > 0">
             <v-layout row wrap>
               <v-flex xs12 sm6 md4 lg3 v-for="book in books" :key="book.id">
-               
+                <BookCard
+                :book="book"
+                :inProfile="true"
+                @refresh="getBooks"
+                @editBook="editBook"
+              />
               </v-flex>
             </v-layout>
           </v-container>
@@ -70,7 +75,12 @@
         </v-row>
         <v-row v-if="resources.length > 0">
           <v-col v-for="item in resources" :key="item.id" cols="12" sm="6" md="4">
-           
+            <ResourceCard
+            :resource="item"
+            :inProfile="true"
+            @refresh="getResources"
+            @editResource="editResource"
+          />
           </v-col>
         </v-row>
         <v-row v-else>
@@ -104,7 +114,11 @@
       };
     },
     components: {
-     
+      BookCard: () => import('@/components/ProductCard.vue'),
+      // AddBookForm: () => import('@/components/AddBookForm.vue'),
+      // AddResForm: () => import('@/components/AddResForm.vue'),
+      ResourceCard: () => import('@/components/RequirementsCard.vue'),
+      // ResDetailsDialog: () => import('@/components/ReqDialog.vue'),
     },
     methods: {
       getUser() {
@@ -200,6 +214,10 @@
   </script>
   
   <style scoped>
+  .v-application .blue {
+    background-color: #000044 !important;
+    border-color: #000044 !important;
+  }
   .profile {
     min-height: 100vh;
   }

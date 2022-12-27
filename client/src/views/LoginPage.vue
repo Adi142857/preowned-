@@ -11,7 +11,11 @@
 					<input type="email" id="email" name="email" placeholder="Email" required="" v-model="email">
 					<input type="password" id="password" name="pswd" placeholder="Password" required="" v-model="password">
 					<input type="password2" id="password2" name="pswd" placeholder="Confirm Password" required="" v-model="password2">
-					<button @click="register">Sign up</button>
+					<button @click="register">
+						<v-progress-circular indeterminate color="white" size="20" v-if="$store.state.loading"></v-progress-circular>
+						<!-- <v-progress-linear :indeterminate="loading" absolute bottom color="deep-purple accent-4" v-if="$store.state.loading"/> -->
+						<span v-else>Register</span>
+					</button>
 				</form>
 			</div>
 
@@ -20,7 +24,14 @@
 					<label for="chk" aria-hidden="true">Login</label>
 					<input type="email" name="email" placeholder="Email" required="" id="loginemail" v-model="email">
 					<input type="password" name="pswd" placeholder="Password" required="" id="loginpassword" v-model="password">
-					<button type="submit">Login</button>
+					<button type="submit">
+						<v-progress-circular indeterminate color="white" size="20" v-if="$store.state.loading"></v-progress-circular>
+						<!-- <v-progress-linear color="red lighten-2" buffer-value="0" stream v-if="$store.state.loading"></v-progress-linear> -->
+						<!-- <v-progress-linear :indeterminate="loading" absolute bottom color="deep-purple accent-4" v-if="$store.state.loading"/> -->
+						<span v-else>Login</span>
+					
+					</button>
+					
 				</form>
 			</div>
 		</div>
@@ -32,6 +43,8 @@ export default {
     name:'LoginPage',
 	data() {
     return {
+		interval: {},
+        value: 0,
 		username: '',
 		email: '',
 		password: '',
@@ -42,7 +55,7 @@ export default {
   methods: {
     login() {
       if (!this.validatelogin()) {
-        // this.$store.commit('flashError', this.error);
+        this.$store.commit('flashError', this.error);
 		alert(this.error);
         return;
       }
@@ -69,7 +82,7 @@ export default {
 	register() {
       const valid = this.validateRegister();
       if (!valid) {
-        // this.$store.commit('flashError', this.error);
+        this.$store.commit('flashError', this.error);
 		console.log(this.error);
         return;
       }
@@ -108,6 +121,7 @@ export default {
       const re = /\S+@\S+\.\S+/;
       return re.test(email);
     },
+	
   },
   
   
@@ -116,16 +130,21 @@ export default {
 </script>
 <style scoped>
  @import url('https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap');
+ html{
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+ }
  body{
 	margin-top:-7px;
 	padding: 0;
-	overflow-y: hidden;
+	
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	min-height: 95vh;
 	font-family: 'Jost', sans-serif;
-	background: linear-gradient(to bottom, #0f0c29,#1A237E, #093074);
+	background: linear-gradient(to bottom, #0f0c29,#1A237E);
 }
 .main{
 	width: 350px;

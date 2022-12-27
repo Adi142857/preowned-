@@ -4,6 +4,9 @@ import store from '@/store/store'
 import LandingPage from '../components/LandingPage.vue' 
 import Login from '../views/LoginPage.vue'
 import ProductsPage from '../views/ProductsPage.vue'
+import ProfileView from '../views/ProfileView.vue'
+import RequirementPage from '../views/RequirementPage.vue'
+import Details from '../components/DetailsPage.vue'
 
 Vue.use(VueRouter)
 
@@ -21,12 +24,22 @@ const routes = [
     {
         path: '/profile',
         name: 'profile',
-        component: () => import('../views/ProfileView.vue'),
+        component: ProfileView,
     },
     {
         path: '/products',
         name: 'products',
         component: ProductsPage,
+    },
+    {
+        path: '/requirements',
+        name: 'requirements',
+        component: RequirementPage,
+    },
+    {
+        path: '/details',
+        name: 'details',
+        component: Details,
     }
 ]
 
@@ -49,5 +62,6 @@ if ((to.path === '/login' || to.path === '/register') && isAuth) {
 }
 
 next();
-  });
+
+});
 export default router;

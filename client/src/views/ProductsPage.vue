@@ -2,7 +2,7 @@
     <div>
       <div class="book">
         <div class="book__header">
-          <h1 class="book__title">Available Books</h1>
+          <h1 class="book__title">Available products</h1>
           <v-btn
             v-if="this.$store.state.isLoggedIn"
             class="book__button"
@@ -14,30 +14,34 @@
         <v-container v-if="books.length > 0">
           <v-layout row wrap>
             <v-flex xs12 sm6 md4 lg3 v-for="book in books" :key="book.id">
-             
+              <BookCard :book="book" />
             </v-flex>
           </v-layout>
         </v-container>
         <div v-else class="book__empty">
           <v-progress-circular
             indeterminate
-            color="red"
+            color="blue"
             class="mt-5"
             v-if="$store.state.loading"
           ></v-progress-circular>
           <span v-else>No products as of now</span>
         </div>
       </div>
+      <AddBookForm v-if="$store.state.formDialog" @addBook="addBook" />
      
     </div>
   </template>
   
   <script>
-
+  import BookCard from '@/components/ProductCard.vue';
+  import AddBookForm from '@/components/AddProducts.vue';
   import axiosInstance from '@/apiClient';
   export default {
     name: 'ProductsPage',
     components: {
+      BookCard,
+      AddBookForm,
 
     },
     data() {
@@ -86,7 +90,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #131418;
+    background-color: #fcfafb;
     padding-top: 100px;
     min-height: 100vh;
   }
@@ -101,11 +105,11 @@
   }
   .book__title {
     font-size: 2rem;
-    color: #fff;
+    color: rgb(31, 27, 27);
   }
   .book__empty {
     font-size: 1.5rem;
-    color: #fff;
+    color: rgb(22, 20, 20);
   }
   .book__grid {
     display: flex;
@@ -116,7 +120,7 @@
     height: auto;
   }
   .book__button {
-    background-color: #fff;
+    background-color: rgb(28, 26, 26);
     color: #131418;
     border: none;
     padding: 10px 20px;
