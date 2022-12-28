@@ -10,7 +10,7 @@ const debug = require('debug')('backend:main');
 const app = express();
 
 // connect to mongodb
-mongoose.connect("mongodb+srv://aditya:prathamesh@cluster0.fwpb7vk.mongodb.net/test", { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
+mongoose.connect(process.env.MONGO_DB_URI, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
     debug('Connected to MongoDB');
 }).catch((err) => {
     debug(err);
@@ -44,7 +44,7 @@ app.use((err, req, res, next) => {
 });
 
 // Server Initialization
-const port = process.env.PORT ;
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
     debug(`Server started on port ${port}`);
 });
