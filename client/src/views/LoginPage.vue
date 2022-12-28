@@ -9,8 +9,8 @@
 					<label for="chk" aria-hidden="true">Sign up</label>
 					<input type="text" id="text" name="txt" placeholder="User name" required="" v-model="username">
 					<input type="email" id="email" name="email" placeholder="Email" required="" v-model="email">
-					<input type="password" id="password" name="pswd" placeholder="Password" required="" v-model="password">
-					<input type="password2" id="password2" name="pswd" placeholder="Confirm Password" required="" v-model="password2">
+					<input type="password" id="password" name="pswd" placeholder="Password" required="" v-model="password" autocomplete="on">
+					<input type="password2" id="password2" name="pswd" placeholder="Confirm Password" required="" v-model="password2" autocomplete="on">
 					<button @click="register">
 						<v-progress-circular indeterminate color="white" size="20" v-if="$store.state.loading"></v-progress-circular>
 						<!-- <v-progress-linear :indeterminate="loading" absolute bottom color="deep-purple accent-4" v-if="$store.state.loading"/> -->
@@ -22,8 +22,8 @@
 			<div class="login">
 				<form @submit.prevent="login">
 					<label for="chk" aria-hidden="true">Login</label>
-					<input type="email" name="email" placeholder="Email" required="" id="loginemail" v-model="email">
-					<input type="password" name="pswd" placeholder="Password" required="" id="loginpassword" v-model="password">
+					<input type="email" name="email" placeholder="Email" required="" id="loginemail" v-model="email" autocomplete="on">
+					<input type="password" name="pswd" placeholder="Password" required="" id="loginpassword" v-model="password" autocomplete="on">
 					<button type="submit">
 						<v-progress-circular indeterminate color="white" size="20" v-if="$store.state.loading"></v-progress-circular>
 						<!-- <v-progress-linear color="red lighten-2" buffer-value="0" stream v-if="$store.state.loading"></v-progress-linear> -->
