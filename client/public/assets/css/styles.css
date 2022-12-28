@@ -65,16 +65,6 @@ h6 {
 	line-height: 1.5rem;
 }
 
-.testimonial-text {
-	font-style: italic;
-}
-
-.testimonial-author {
-	font-weight: 700;
-	font-size: 1.25rem;
-	line-height: 1.75rem;
-}
-
 .li-space-lg li {
 	margin-bottom: 0.5rem;
 }
@@ -119,7 +109,7 @@ a:hover {
 
 .section-title {
 	margin-bottom: 0.5rem;
-	color: #ef473d;
+	color:#1A237E;
 	font-weight: 600;
 	font-size: 0.875rem;
 }
@@ -129,7 +119,7 @@ a:hover {
 	padding: 1.375rem 2.25rem 1.375rem 2.25rem;
 	border: 1px solid #0092ff;
 	border-radius: 30px;
-	background-color: #0092ff;
+	/* background-color: #0092ff; */
 	color: #ffffff;
 	font-weight: 600;
 	font-size: 0.875rem;
@@ -188,7 +178,7 @@ a:hover {
 .btn-outline-reg {
 	display: inline-block;
 	padding: 1.375rem 2.25rem 1.375rem 2.25rem;
-	border: 1px solid #ef473d;
+	border: 1px solid #1976d2;
 	border-radius: 30px;
 	background-color: transparent;
 	color: #ef473d;
@@ -261,12 +251,12 @@ a:hover {
 	background-color: #ffffff;
 	font-size: 0.875rem;
 	line-height: 1.5rem;
-	-webkit-appearance: none; /* removes inner shadow on form inputs on ios safari */
+	-webkit-appearance: none; 
 }
 
 .form-control-textarea {
 	display: block;
-	height: 14rem; /* used instead of html rows to normalize height between Chrome and IE/FF */
+	height: 14rem; 
 }
 
 .form-control-input:focus,
@@ -301,128 +291,6 @@ a:hover {
 	color: #0092ff;
 }
 
-
-/**********************/
-/*     Navigation     */
-/**********************/
-.navbar {
-	background-color: #fcfafb;
-	font-weight: 600;
-	font-size: 0.875rem;
-	line-height: 0.875rem;
-	box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.05);
-}
-
-.navbar .navbar-brand {
-	padding-top: 0.25rem;
-	padding-bottom: 0.25rem;
-}
-
-.navbar .logo-image img {
-    width: 126px;
-	height: 32px;
-}
-
-.navbar .logo-text {
-	color: #223150;
-	font-weight: 700;
-	font-size: 1.875rem;
-	line-height: 1rem;
-	text-decoration: none;
-}
-
-.offcanvas-collapse {
-	position: fixed;
-	top: 3.25rem; /* adjusts the height between the top of the page and the offcanvas menu */
-	bottom: 0;
-	left: 100%;
-	width: 100%;
-	padding-right: 1rem;
-	padding-left: 1rem;
-	overflow-y: auto;
-	visibility: hidden;
-	background-color: #fcfafb;
-	transition: visibility .3s ease-in-out, -webkit-transform .3s ease-in-out;
-	transition: transform .3s ease-in-out, visibility .3s ease-in-out;
-	transition: transform .3s ease-in-out, visibility .3s ease-in-out, -webkit-transform .3s ease-in-out;
-}
-
-.offcanvas-collapse.open {
-	visibility: visible;
-	-webkit-transform: translateX(-100%);
-	transform: translateX(-100%);
-}
-
-.navbar .navbar-nav {
-	margin-top: 0.75rem;
-	margin-bottom: 0.5rem;
-}
-
-.navbar .nav-item .nav-link {
-	padding-top: 0.625rem;
-	padding-bottom: 0.625rem;
-	color: #5e6576;
-	text-decoration: none;
-	transition: all 0.2s ease;
-}
-
-.navbar .nav-item.dropdown.show .nav-link,
-.navbar .nav-item .nav-link:hover,
-.navbar .nav-item .nav-link.active {
-	color: #0092ff;
-}
-
-/* Dropdown Menu */
-.navbar .dropdown .dropdown-menu {
-	animation: fadeDropdown 0.2s; /* required for the fade animation */
-}
-
-@keyframes fadeDropdown {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-	}
-}
-
-.navbar .dropdown-menu {
-	margin-top: 0.25rem;
-	margin-bottom: 0.25rem;
-	border: none;
-	background-color: #fcfafb;
-}
-
-.navbar .dropdown-item {
-	padding-top: 0.625rem;
-	padding-bottom: 0.625rem;
-	color: #5e6576;
-	font-weight: 600;
-	font-size: 0.875rem;
-	line-height: 0.875rem;
-	text-decoration: none;
-}
-
-.navbar .dropdown-item:hover {
-	background-color: #fcfafb;
-	color: #0092ff;
-}
-
-.navbar .dropdown-divider {
-	width: 100%;
-	height: 1px;
-	margin: 0.5rem auto 0.5rem auto;
-	border: none;
-	background-color: #d1d1d1;
-}
-/* end of dropdown menu */
-
-.navbar .navbar-toggler {
-	padding: 0;
-	border: none;
-	font-size: 1.25rem;
-}
 
 
 /******************/
@@ -528,7 +396,7 @@ a:hover {
 .basic-1 {
 	padding-top: 2.25rem;
 	padding-bottom: 4.75rem;
-	background: linear-gradient(rgb(252, 250, 251), rgb(255, 255, 255));
+	background: linear-gradient(rgb(252, 255, 255), rgb(255, 255, 255));
 }
 
 .basic-1 .image-container {
@@ -549,7 +417,7 @@ a:hover {
 /*********************/
 .basic-2 {
 	padding-top: 4.5rem;
-	padding-bottom: 9.5rem;
+	/* padding-bottom: 9.5rem; */
 	background: url('../images/details-2-background.jpg') center center no-repeat;
 	background-size: cover;
 }
@@ -661,74 +529,6 @@ a:hover {
 	color: #ffffff;
 }
 
-
-/************************/
-/*     Testimonials     */
-/************************/
-.cards-2 {
-	padding-top: 9.5rem;
-	padding-bottom: 2.25rem;
-	text-align: center;
-}
-
-.cards-2 .h2-heading {
-	margin-bottom: 3.75rem;
-}
-
-.cards-2 .card {
-	position: relative;
-	margin-bottom: 5rem;
-	border-radius: 10px;
-	box-shadow: 0 4px 20px -1px rgba(0, 0, 0, 0.1);
-}
-
-.cards-2 .card .quotes {
-	position: absolute;
-	top: -15px;
-	right: 0;
-	left: 0;
-	width: 48px;
-	margin-right: auto;
-	margin-left: auto;
-}
-
-.cards-2 .card-body {
-	padding: 3.5rem 2rem 3.125rem 2rem;
-}
-
-.cards-2 .testimonial-author {
-	margin-bottom: 0.125rem;
-	color: #223150;
-}
-
-.cards-2 .occupation {
-	font-size: 0.875rem;
-	line-height: 1.5rem;
-}
-
-.cards-2 .card .gradient-floor {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	height: 10px;
-	width: 100%;
-	border-bottom-left-radius: 10px;
-	border-bottom-right-radius: 10px;
-}
-
-.cards-2 .card .gradient-floor.red-to-blue {
-	background: linear-gradient(to right, #ef3d91, #0092ff);
-}
-
-.cards-2 .card .gradient-floor.blue-to-purple {
-	background: linear-gradient(to right, #0092ff, #637eff);
-}
-
-.cards-2 .card .gradient-floor.purple-to-green {
-	background: linear-gradient(to right, #637eff, #16c66d);
-}
-
-
 /********************/
 /*    Customers     */
 /********************/
@@ -750,74 +550,6 @@ a:hover {
 .slider-1 .slider-container {
 	margin-bottom: 0.5rem;
 	padding: 1rem 0;
-}
-
-
-/**********************/
-/*     Invitation     */
-/**********************/
-.basic-3 {
-	padding-top: 4rem;
-	background-size: cover;
-	text-align: center;
-}
-
-.basic-3 .text-container {
-	padding: 5rem 1.5rem 5.5rem 1.5rem;
-	border-radius: 28px;
-	background: url('../images/invitation-background.jpg') center center no-repeat;
-	background-size: cover;
-}
-
-.basic-3 h2 {
-	margin-bottom: 1rem;
-	color: #ffffff;
-}
-
-.basic-3 .p-large {
-	margin-bottom: 2.75rem;
-	color: #ffffff;
-}
-
-.basic-3 .btn-solid-lg {
-	border-color: #16c66d;
-	background-color: #16c66d;
-}
-
-.basic-3 .btn-solid-lg:hover {
-	border-color: #ffffff;
-	background-color: transparent;
-	color: #ffffff;
-}
-
-
-/*******************/
-/*     Contact     */
-/*******************/
-.form-1 {
-	padding-top: 9.5rem;
-	padding-bottom: 8.75rem;
-}
-
-.form-1 .text-container {
-	margin-bottom: 4rem;
-}
-
-.form-1 .section-divider {
-	margin-bottom: 1rem;
-}
-
-.form-1 h2 {
-	margin-bottom: 1.75rem;
-}
-
-.form-1 .list-unstyled .fas {
-	font-size: 0.375rem;
-	line-height: 1.625rem;
-}
-
-.form-1 .list-unstyled .flex-grow-1 {
-	margin-left: 0.5rem;
 }
 
 
@@ -928,55 +660,7 @@ a:hover {
 /***********************/
 /*     Extra Pages     */
 /***********************/
-.ex-header {
-	padding-top: 9rem;
-	padding-bottom: 5rem;
-	background-color: #fcfafb;
-}
 
-.ex-basic-1 .list-unstyled .fas {
-	font-size: 0.375rem;
-	line-height: 1.625rem;
-}
-
-.ex-basic-1 .list-unstyled .flex-grow-1 {
-	margin-left: 0.5rem;
-}
-
-.ex-basic-1 .text-box {
-	padding: 1.25rem 1.25rem 0.5rem 1.25rem;
-	background-color: #fcfafb;
-}
-
-.ex-cards-1 .card {
-	border: none;
-	background-color: transparent;
-}
-
-.ex-cards-1 .card .fa-stack {
-	width: 2em;
-	font-size: 1.125rem;
-}
-
-.ex-cards-1 .card .fa-stack-2x {
-	color: #0092ff;
-}
-
-.ex-cards-1 .card .fa-stack-1x {
-	width: 2em;
-	color: #ffffff;
-	font-weight: 700;
-	line-height: 2.125rem;
-}
-
-.ex-cards-1 .card .list-unstyled .flex-grow-1 {
-	margin-left: 2.25rem;
-}
-
-.ex-cards-1 .card .list-unstyled .flex-grow-1 h5 {
-	margin-top: 0.125rem;
-	margin-bottom: 0.5rem;
-}
 
 
 /*************************/
@@ -1304,19 +988,6 @@ a:hover {
 	}
 	/* end of features */
 
-
-	/* Testimonials */
-	.cards-2 .card {
-		width: 356px;
-	}
-	
-	.cards-2 .card:nth-of-type(3n+2) {
-		margin-right: 1.125rem;
-		margin-left: 1.125rem;
-	}
-	/* end of testimonials */
-
-
 	/* Invitation */
 	.basic-3 .text-container {
 		padding-top: 8rem;
@@ -1343,11 +1014,6 @@ a:hover {
 	}
 	/* end of footer */
 
-
-	/* Extra Pages */
-	.ex-cards-1 .card {
-		width: 336px;
-	}
 
 	.ex-cards-1 .card:nth-of-type(3n+2) {
 		margin-right: 2.875rem;

@@ -48,25 +48,7 @@
           </v-container>
         </v-row>
       </v-col>
-      <v-col class="px-4 py-8">
-        <v-row class="py-4">
-          <h1 class="white--text text-h4 mx-sm-4 mx-md-6 mx-lg-10">
-            Uploaded Syllabus
-          </h1>
-        </v-row>
-        <v-row>
-          <v-container v-if="syllabuss.length > 0">
-            <v-layout row wrap>
-              <v-flex xs12 sm6 md4 lg3 v-for="item in syllabuss" :key="item.id">
-                
-              </v-flex>
-            </v-layout>
-          </v-container>
-          <v-container v-else class="text-center">
-            <h2 class="white--text">No Syllabus uploaded yet</h2>
-          </v-container>
-        </v-row>
-      </v-col>
+    
       <v-col class="px-4 py-8">
         <v-row class="py-4">
           <h1 class="white--text text-h4 mx-sm-4 mx-md-6 mx-lg-10">
@@ -89,7 +71,9 @@
           </v-col>
         </v-row>
       </v-col>
-      
+      <AddBookForm :isEdit="isEdit" :book="book" @edit="bookEditReq" />
+      <AddResForm :isEdit="isEdit" :resource="resource" @edit="resourceEditReq" />
+      <ResDetailsDialog v-if="$store.state.resDetailsDialog" />
     </v-container>
   </template>
   
@@ -115,10 +99,10 @@
     },
     components: {
       BookCard: () => import('@/components/ProductCard.vue'),
-      // AddBookForm: () => import('@/components/AddBookForm.vue'),
-      // AddResForm: () => import('@/components/AddResForm.vue'),
+      AddBookForm: () => import('@/components/AddProducts.vue'),
+      AddResForm: () => import('@/components/AddRequirements.vue'),
       ResourceCard: () => import('@/components/RequirementsCard.vue'),
-      // ResDetailsDialog: () => import('@/components/ReqDialog.vue'),
+      ResDetailsDialog: () => import('@/components/ReqDialog.vue'),
     },
     methods: {
       getUser() {
@@ -130,11 +114,6 @@
       getBooks() {
         axiosInstance.get('/books/me').then((response) => {
           this.books = response.data;
-        });
-      },
-      getSyllabus() {
-        axiosInstance.get('/syllabus/me').then((response) => {
-          this.syllabuss = response.data;
         });
       },
       getResources() {
@@ -207,7 +186,6 @@
     created() {
       this.getUser();
       this.getBooks();
-      this.getSyllabus();
       this.getResources();
     },
   };

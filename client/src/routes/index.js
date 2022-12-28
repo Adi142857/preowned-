@@ -37,7 +37,7 @@ const routes = [
         component: RequirementPage,
     },
     {
-        path: '/details',
+        path: '/aboutus',
         name: 'details',
         component: Details,
     }

@@ -7,7 +7,7 @@
             <Avatar />
           </v-list-item-avatar>
           <v-list-item-content>
-            <v-list-item-title class="title">Book By 3</v-list-item-title>
+            <v-list-item-title class="title">Pre-owned</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -32,18 +32,18 @@
         </v-list-item>
         <v-list-item link @click="$router.push('/requirements')">
           <v-list-item-icon class="justify-center">
-            <v-icon>mdi-school-outline</v-icon>
+            <v-icon>mdi-file-upload-outline</v-icon>
           </v-list-item-icon>
           <v-list-item-content>
             <v-list-item-title class="subtitile-1">Requirements</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item link @click="$router.push('/syllabus')">
+        <v-list-item link @click="$router.push('/aboutus')">
           <v-list-item-icon class="justify-center">
             <v-icon>mdi-school-outline</v-icon>
           </v-list-item-icon>
           <v-list-item-content>
-            <v-list-item-title class="subtitile-1">Syllabus</v-list-item-title>
+            <v-list-item-title class="subtitile-1">About us</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
         <v-divider />
@@ -106,8 +106,8 @@
         <v-btn text @click="$router.push('/requirements')">
           <span class="mr-2 white--text">Requirements</span>
         </v-btn>
-        <v-btn text @click="$router.push('/details')">
-          <span class="mr-2 white--text">Services</span>
+        <v-btn text @click="$router.push('/aboutus')">
+          <span class="mr-2 white--text">About us</span>
         </v-btn>
         <!-- avatar -->
       

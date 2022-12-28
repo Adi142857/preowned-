@@ -3,7 +3,7 @@
       v-model="$store.state.resDetailsDialog"
       fullscreen
       hide-overlay
-      transition="dialog-bottom-transition"
+      transition="dialog-top-transition"
     >
       <v-card dark>
         <v-toolbar dark color="red">
@@ -19,7 +19,7 @@
           <!-- category chips -->
           <v-chip
             small
-            color="red"
+            color="blue"
             class="mr-3"
             v-for="tag in $store.state.resource.category"
             :key="tag"

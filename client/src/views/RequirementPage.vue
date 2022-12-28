@@ -1,8 +1,8 @@
 <template>
     <div class="resources__container">
       <v-container style="margin-top: 100px">
-        <v-row class="justify-space-between px-5">
-          <h1 class="white--text">Requirements</h1>
+        <v-row class="justify-space-between px-3">
+          <h1 class="1A237E--text">Requirements</h1>
           <v-btn
             color="#fff"
             class="book__button"
