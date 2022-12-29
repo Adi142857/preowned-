@@ -90,7 +90,7 @@
         type: Boolean,
         default: false,
       },
-      resource: {
+      requirement: {
         type: Object,
         default: () => {},
       },
@@ -115,10 +115,10 @@
       isEdit: {
         handler() {
           if (this.isEdit) {
-            this.title = this.resource.title;
-            this.description = this.resource.description;
-            this.category = this.resource.category;
-            this.links = this.resource.links.join(',');
+            this.title = this.requirement.title;
+            this.description = this.requirement.description;
+            this.category = this.requirement.category;
+            this.links = this.requirement.links.join(',');
           }
         },
         immediate: true,

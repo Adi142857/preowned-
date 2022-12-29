@@ -1,6 +1,6 @@
 const moongose = require('mongoose')
 
-const resourceSchema = new moongose.Schema({
+const requirementSchema = new moongose.Schema({
     title: {
         type: String,
         required: true
@@ -25,4 +25,4 @@ const resourceSchema = new moongose.Schema({
     timestamps: true
 })
 
-module.exports = moongose.model('Resource', resourceSchema)
+module.exports = moongose.model('Requirement', requirementSchema)

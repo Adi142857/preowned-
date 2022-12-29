@@ -10,15 +10,15 @@
             v-if="$store.state.isLoggedIn"
             >Add</v-btn>
         </v-row>
-        <v-row v-if="resources.length > 0">
+        <v-row v-if="requirements.length > 0">
           <v-col
-            v-for="resource in resources"
-            :key="resource.id"
+            v-for="requirement in requirements"
+            :key="requirement.id"
             cols="12"
             sm="6"
             md="4"
           >
-            <ResourceCard :resource="resource" />
+            <ResourceCard :requirement="requirement" />
           </v-col>
         </v-row>
         <v-row v-else>
@@ -31,11 +31,11 @@
               v-if="$store.state.loading"
             ></v-progress-circular>
 
-            <h2 v-else class="white--text">No Resources Found</h2>
+            <h2 v-else class="black--text mx-20">No Requirements Found</h2>
           </v-col>
         </v-row>
       </v-container>
-      <AddResForm v-if="$store.state.resDialog" @addRes="addResource" />
+      <AddResForm v-if="$store.state.resDialog" @addRes="addRequirement" />
       <ReqDialog v-if="$store.state.resDetailsDialog" />
 
     </div>
@@ -51,30 +51,30 @@
     name: 'ResourcesView',
     data() {
       return {
-        resources: [],
+        requirements: [],
       };
     },
     methods: {
-      getResources() {
+      getRequirements() {
         this.$store.commit('loading', true);
         axiosInstance
-          .get('/resources')
+          .get('/requirements')
           .then((response) => {
             this.$store.commit('loading', false);
-            this.resources = response.data;
+            this.requirements = response.data;
           })
           .catch((error) => {
             this.$store.commit('loading', false);
             console.log(error);
           });
       },
-      addResource(payload) {
+      addRequirement(payload) {
         axiosInstance
-          .post('/resources', payload)
+          .post('/requirements', payload)
           .then(() => {
             this.$store.commit('loading', false);
             this.$store.commit('setResDialog', false);
-            this.getResources();
+            this.getRequirements();
             this.$store.commit('flashSuccess', 'Syllabus Added Successfully');
           })
           .catch((error) => {
@@ -85,7 +85,7 @@
       },
     },
     mounted() {
-      this.getResources();
+      this.getRequirements();
     },
     components: { AddResForm, ResourceCard, ReqDialog },
   };

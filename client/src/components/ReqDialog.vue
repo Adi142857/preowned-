@@ -10,10 +10,10 @@
           <v-btn icon dark @click="$store.commit('setResDetailsDialog', false)">
             <v-icon>mdi-close</v-icon>
           </v-btn>
-          <v-toolbar-title>Resource</v-toolbar-title>
+          <v-toolbar-title>Requirement</v-toolbar-title>
         </v-toolbar>
         <v-card-title class="text-h4">
-          {{ $store.state.resource.title }}
+          {{ $store.state.requirement.title }}
         </v-card-title>
         <v-card-text>
           <!-- category chips -->
@@ -21,7 +21,7 @@
             small
             color="blue"
             class="mr-3"
-            v-for="tag in $store.state.resource.category"
+            v-for="tag in $store.state.requirement.category"
             :key="tag"
           >
             {{ tag }}
@@ -30,14 +30,14 @@
         <v-card-subtitle class="text-h6">
           <span class="text-h6 white--text"> About: </span>
           <span class="text-subtitle-5 white--text">
-            {{ $store.state.resource.description }}
+            {{ $store.state.requirement.description }}
           </span>
         </v-card-subtitle>
   
         <!-- links  in a list with a link icon at left-->
         <v-list>
           <v-list-item
-            v-for="link in $store.state.resource.links"
+            v-for="link in $store.state.requirement.links"
             :key="link"
             class="px-5"
           >

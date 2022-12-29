@@ -52,27 +52,27 @@
       <v-col class="px-4 py-8">
         <v-row class="py-4">
           <h1 class="white--text text-h4 mx-sm-4 mx-md-6 mx-lg-10">
-            Uploaded Resources
+            Uploaded Requirements
           </h1>
         </v-row>
-        <v-row v-if="resources.length > 0">
-          <v-col v-for="item in resources" :key="item.id" cols="12" sm="6" md="4">
+        <v-row v-if="requirements.length > 0">
+          <v-col v-for="item in requirements" :key="item.id" cols="12" sm="6" md="4">
             <ResourceCard
-            :resource="item"
+            :requirement="item"
             :inProfile="true"
-            @refresh="getResources"
-            @editResource="editResource"
+            @refresh="getRequirements"
+            @editRequirement="editRequirement"
           />
           </v-col>
         </v-row>
         <v-row v-else>
           <v-col cols="12" class="text-center">
-            <h2 class="white--text">No Resources Found</h2>
+            <h2 class="white--text">No Requirements Found</h2>
           </v-col>
         </v-row>
       </v-col>
       <AddBookForm :isEdit="isEdit" :product="product" @edit="productEditReq" />
-      <AddResForm :isEdit="isEdit" :resource="resource" @edit="resourceEditReq" />
+      <AddResForm :isEdit="isEdit" :requirement="requirement" @edit="requirementEditReq" />
       <ResDetailsDialog v-if="$store.state.resDetailsDialog" />
     </v-container>
   </template>
@@ -90,11 +90,11 @@
         },
         products: [],
         syllabuss: [],
-        resources: [],
+        requirements: [],
         isEdit: false,
         product: {},
         syllabus: {},
-        resource: {},
+        requirement: {},
       };
     },
     components: {
@@ -116,9 +116,9 @@
           this.products = response.data;
         });
       },
-      getResources() {
-        axiosInstance.get('/resources/me').then((response) => {
-          this.resources = response.data;
+      getRequirements() {
+        axiosInstance.get('/requirements/me').then((response) => {
+          this.requirements = response.data;
         });
       },
       editProduct(product) {
@@ -161,20 +161,20 @@
             console.log(err);
           });
       },
-      editResource(resource) {
-        this.resource = resource;
+      editRequirement(requirement) {
+        this.requirement = requirement;
         this.$store.commit('setResDialog', true);
         this.isEdit = true;
       },
-      resourceEditReq(payload) {
+      requirementEditReq(payload) {
         axiosInstance
-          .put(`/resources/${this.resource._id}`, payload)
+          .put(`/requirements/${this.requirement._id}`, payload)
           .then(() => {
             this.$store.commit('loading', false);
             this.$store.commit('setResDialog', false);
             this.isEdit = false;
-            this.$store.commit('flashSuccess', 'Resource Edited Successfully');
-            this.getResources();
+            this.$store.commit('flashSuccess', 'Requirement Edited Successfully');
+            this.getRequirements();
           })
           .catch((err) => {
             this.$store.commit('loading', false);
@@ -186,7 +186,7 @@
     created() {
       this.getUser();
       this.getProducts();
-      this.getResources();
+      this.getRequirements();
     },
   };
   </script>

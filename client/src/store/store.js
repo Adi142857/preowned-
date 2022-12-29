@@ -16,7 +16,7 @@ export default new Vuex.Store({
             type: null,
             show: false
         },
-        resource: {},
+        requirement: {},
         resDetailsDialog: false,
     },
     mutations: {
@@ -38,8 +38,8 @@ export default new Vuex.Store({
         setResDetailsDialog(state, payload) {
             state.resDetailsDialog = payload
         },
-        setResource(state, payload) {
-            state.resource = payload
+        setRequirement(state, payload) {
+            state.requirement = payload
         },
         flashSuccess(state, payload) {
             state.flash.message = payload ? payload : 'Success!'

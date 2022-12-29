@@ -6,7 +6,7 @@
     <v-card-text>
       <div class="mx-2">{{date}}</div>
       <p class="text-h4 text--primary mx-2">
-        {{resource.title}}
+        {{requirement.title}}
       </p>
       <v-card-actions>
       <v-chip small color="blue" class="mx-1" v-for="tag in category" :key="tag">
@@ -14,7 +14,7 @@
       </v-chip>
       </v-card-actions>
       <!-- <div class="text--primary">
-        {{resource.description}}
+        {{requirement.description}}
       </div> -->
     </v-card-text>
     <v-card-actions>
@@ -32,7 +32,7 @@
         outlined
         rounded
         text
-        @click="$emit('editResource', resource)"
+        @click="$emit('editRequirement', requirement)"
         color="primary"
         v-if="inProfile"
       >
@@ -42,7 +42,7 @@
         outlined
         rounded
         text
-        @click="deleteResource"
+        @click="deleteRequirement"
         color="error"
         v-if="inProfile"
       >
@@ -60,19 +60,19 @@
       >
         <v-card-text class="">
           <p class="text-h4 text--primary">
-              {{ resource.title }}
+              {{ requirement.title }}
           </p>
           <v-chip
           small
           color="blue"
           class="mr-3"
-          v-for="tag in resource.category"
+          v-for="tag in requirement.category"
           :key="tag"
         >
           {{ tag }}
         </v-chip>
           <div class="text--primary">
-            About : {{ resource.description }}
+            About : {{ requirement.description }}
           </div>
         </v-card-text>
         <v-card-actions class="pt-0">
@@ -101,7 +101,7 @@ import axiosInstance from '@/api';
 
 export default {
 props: {
-  resource: {
+  requirement: {
     type: Object,
     required: true,
   },
@@ -116,11 +116,11 @@ data: () => ({
 methods:{
   openDetailDialog() {
       this.$store.commit('setResDetailsDialog', true);
-      this.$store.commit('setResource', this.resource);
+      this.$store.commit('setRequirement', this.requirement);
   },
-  deleteResource() {
+  deleteRequirement() {
   axiosInstance
-      .delete(`/resources/${this.resource._id}`)
+      .delete(`/requirements/${this.requirement._id}`)
       .then(() => {
       this.$emit('refresh');
       this.$store.commit('flashSuccess', 'Syllabus Deleted Successfully');
@@ -133,10 +133,10 @@ methods:{
 },
   computed: {
       category() {
-          return this.resource.category.slice(0, 4);
+          return this.requirement.category.slice(0, 4);
       },
       date() {
-          const date = new Date(this.resource.createdAt);
+          const date = new Date(this.requirement.createdAt);
           const month = date.toLocaleString('default', { month: 'short' });
           const year = date.getFullYear();
           return `${month} ${year}`;
