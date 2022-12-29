@@ -36,7 +36,7 @@
   <script>
   import BookCard from '@/components/ProductCard.vue';
   import AddBookForm from '@/components/AddProducts.vue';
-  import axiosInstance from '@/apiClient';
+  import axiosInstance from '@/api';
   export default {
     name: 'ProductsPage',
     components: {

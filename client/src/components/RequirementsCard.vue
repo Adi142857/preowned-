@@ -97,7 +97,7 @@ width: 100%;
 }
 </style>
 <script>
-import axiosInstance from '@/apiClient';
+import axiosInstance from '@/api';
 
 export default {
 props: {

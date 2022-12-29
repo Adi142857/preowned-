@@ -42,7 +42,7 @@
   </template>
   
   <script>
-  import axiosInstance from '@/apiClient';
+  import axiosInstance from '@/api';
   import AddResForm from '@/components/AddRequirements.vue';
   import ResourceCard from '@/components/RequirementsCard.vue';
   import ReqDialog from '@/components/ReqDialog.vue';

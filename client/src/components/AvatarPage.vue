@@ -38,7 +38,7 @@
   }
   </style>
   <script>
-  import axiosInstance from '@/apiClient';
+  import axiosInstance from '@/api';
   export default {
     data() {
       return {
