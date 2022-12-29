@@ -142,7 +142,7 @@ export default {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	min-height: 95vh;
+	min-height: 102vh;
 	font-family: 'Jost', sans-serif;
 	background: linear-gradient(to bottom, #0f0c29,#1A237E);
 }

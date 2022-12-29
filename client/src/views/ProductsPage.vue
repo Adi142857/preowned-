@@ -11,10 +11,10 @@
             Add
           </v-btn>
         </div>
-        <v-container v-if="books.length > 0">
+        <v-container v-if="products.length > 0">
           <v-layout row wrap>
-            <v-flex xs12 sm6 md4 lg3 v-for="book in books" :key="book.id">
-              <BookCard :book="book" />
+            <v-flex xs12 sm6 md4 lg3 v-for="product in products" :key="product.id">
+              <BookCard :product="product" />
             </v-flex>
           </v-layout>
         </v-container>
@@ -28,7 +28,7 @@
           <span v-else>No products as of now</span>
         </div>
       </div>
-      <AddBookForm v-if="$store.state.formDialog" @addBook="addBook" />
+      <AddBookForm v-if="$store.state.formDialog" @addProduct="addProduct" />
      
     </div>
   </template>
@@ -46,29 +46,29 @@
     },
     data() {
       return {
-        books: [],
+        products: [],
       };
     },
     methods: {
-      async fetchBooks() {
+      async fetchProducts() {
         this.$store.commit('loading', true);
         axiosInstance
-          .get('/books')
+          .get('/products')
           .then((response) => {
             this.$store.commit('loading', false);
-            this.books = response.data;
+            this.products = response.data;
           })
           .catch((error) => {
             this.$store.commit('loading', false);
             console.log(error);
           });
       },
-      addBook(payload) {
+      addProduct(payload) {
         axiosInstance
-          .post('/books', payload)
+          .post('/products', payload)
           .then(() => {
             this.$store.commit('loading', false);
-            this.fetchBooks();
+            this.fetchProducts();
             this.$store.commit('setFormDialog', false);
           })
           .catch((error) => {
@@ -78,7 +78,7 @@
       },
     },
     mounted() {
-      this.fetchBooks();
+      this.fetchProducts();
     },
   };
   </script>

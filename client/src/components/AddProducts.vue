@@ -99,7 +99,7 @@ export default {
       type: Boolean,
       default: false,
     },
-    book: {
+    product: {
       type: Object,
       default: () => {},
     },
@@ -136,8 +136,10 @@ export default {
           if (this.image !== null) url = await imageUploadService(this.image);
         } catch (e) {
           this.$store.commit('loading', false);
+         
           console.log(e);
         }
+        this.$store.commit('flashSuccess', 'Product added successfully');
         const toEdit = {
           title: this.title,
           author: this.author,
@@ -150,7 +152,7 @@ export default {
           if (url !== '') toEdit.image = url;
           this.$emit('edit', toEdit);
         } else {
-          this.$emit('addBook', { ...toEdit, image: url });
+          this.$emit('addProduct', { ...toEdit, image: url });
         }
       }
     },
@@ -158,12 +160,12 @@ export default {
   watch: {
     isEdit: function () {
       if (this.isEdit) {
-        this.title = this.book.title;
-        this.author = this.book.author;
-        this.description = this.book.description;
-        this.price = this.book.price;
-        this.category = this.book.category;
-        this.contact = this.book.contact;
+        this.title = this.product.title;
+        this.author = this.product.author;
+        this.description = this.product.description;
+        this.price = this.product.price;
+        this.category = this.product.category;
+        this.contact = this.product.contact;
       }
     },
   },

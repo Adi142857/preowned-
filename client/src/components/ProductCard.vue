@@ -2,15 +2,15 @@
     <v-card text class="book__card text-center ma-3">
       <v-responsive :aspect-ratio="1.5">
         <v-img
-          :src="book.image"
+          :src="product.image"
           height="250"
           width="170"
           class="mx-auto my-2 rounded-lg elevation-5"
         />
       </v-responsive>
       <v-card-text class="pa-0">
-        <div class="black--text text-h6">{{ book.title }}</div>
-        <div class="grey--text">{{ book.author }}</div>
+        <div class="black--text text-h6">{{ product.title }}</div>
+        <div class="grey--text">{{ product.author }}</div>
       </v-card-text>
       <!-- chips of category -->
       <v-card-actions class="px-2 py-0">
@@ -29,7 +29,7 @@
   
       <!-- price -->
       <v-card-actions class="px-6 pt-2 pb-0">
-        <div class="black--text text-h6">Rs.{{ book.price }}</div>
+        <div class="black--text text-h6">Rs.{{ product.price }}</div>
       </v-card-actions>
   
       <v-card-actions v-if="!inProfile" class="justify-center pb-4 pt-0">
@@ -38,7 +38,7 @@
           block
           class="mt-2"
           @click="openChat"
-          :disabled="$store.state.auth.userId === book.user"
+          :disabled="$store.state.auth.userId === product.user"
         >
           <v-icon class="mr-2" color="white">mdi-chat</v-icon>
           Chat
@@ -46,16 +46,16 @@
       </v-card-actions>
       <!-- edit and delete button-->
       <v-card-actions v-if="inProfile" class="justify-space-around">
-        <v-btn color="blue" class="white--text" @click="$emit('editBook', book)"
+        <v-btn color="blue" class="white--text" @click="$emit('editProduct', product)"
           >Edit</v-btn
         >
-        <v-btn color="red" @click="deleteBook" class="white--text">
+        <v-btn color="red" @click="deleteProduct" class="white--text">
           Delete
         </v-btn>
         <v-btn
           color="green"
           class="white--text"
-          @click="$router.push(`/chat/${book._id}`)"
+          @click="$router.push(`/chat/${product._id}`)"
         >
           Chats
         </v-btn>
@@ -68,7 +68,7 @@
   
   export default {
     props: {
-      book: {
+      product: {
         type: Object,
         required: true,
       },
@@ -78,10 +78,10 @@
       },
     },
     methods: {
-      deleteBook() {
+      deleteProduct() {
         this.$store.commit('loading', true);
         axiosInstance
-          .delete(`/books/${this.book._id}`)
+          .delete(`/products/${this.product._id}`)
           .then(() => {
             this.$emit('refresh');
             this.$store.commit('flashSuccess', 'Syllabus Deleted Successfully');
@@ -97,12 +97,12 @@
           this.$router.push('/login');
           return;
         }
-        this.$store.dispatch('openChat', this.book);
+        this.$store.dispatch('openChat', this.product);
       },
     },
     computed: {
       categories() {
-        const categories = this.book.category.split(',');
+        const categories = this.product.category.split(',');
         return categories.slice(0, 3);
       },
     },

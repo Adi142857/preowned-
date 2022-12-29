@@ -1,9 +1,9 @@
-const Book = require('../models/book')
+const Product = require('../models/product')
 const debug = require('debug')('backend:bookController')
 
 module.exports = {
-    getBooks: async (req, res) => {
-        Book.find((err, doc) => {
+    getProducts: async (req, res) => {
+        Product.find((err, doc) => {
             if (err) {
                 res.status(500).json({
                     message: err.message
@@ -13,8 +13,8 @@ module.exports = {
             res.status(200).json(doc);
         });
     },
-    getBook: async (req, res) => {
-        Book.findById(req.params.id, (err, doc) => {
+    getProduct: async (req, res) => {
+        Product.findById(req.params.id, (err, doc) => {
             if (err) {
                 res.status(500).json({
                     message: err.message
@@ -24,12 +24,12 @@ module.exports = {
             res.status(200).json(doc);
         });
     },
-    createBook: async (req, res) => {
-        const book = new Book({
+    createProduct: async (req, res) => {
+        const product = new Product({
             ...req.body,
             user: req.userId
         });
-        book.save((err, doc) => {
+        product.save((err, doc) => {
             if (err) {
                 res.status(500).json({
                     message: err.message
@@ -39,8 +39,8 @@ module.exports = {
             res.status(200).json(doc);
         });
     },
-    updateBook: async (req, res) => {
-        Book.findByIdAndUpdate(req.params.id, {
+    updateProduct: async (req, res) => {
+        Product.findByIdAndUpdate(req.params.id, {
             ...req.body
         }, { new: true }, (err, doc) => {
             if (err) {
@@ -52,11 +52,11 @@ module.exports = {
             res.status(200).json(doc);
         })
     },
-    deleteBook: async (req, res) => {
-        Book.findByIdAndDelete(req.params.id, (err, doc) => {
+    deleteProduct: async (req, res) => {
+        Product.findByIdAndDelete(req.params.id, (err, doc) => {
             if (!doc) {
                 res.status(404).json({
-                    message: 'Book not found'
+                    message: 'Product not found'
                 });
                 return;
             }
@@ -67,12 +67,12 @@ module.exports = {
                 return;
             }
             res.status(200).json({
-                message: 'Book deleted successfully'
+                message: 'Product deleted successfully'
             });
         });
     },
-    myBooks: async (req, res) => {
-        Book.find({ user: req.userId }, (err, doc) => {
+    myProducts: async (req, res) => {
+        Product.find({ user: req.userId }, (err, doc) => {
             if (err) {
                 res.status(500).json({
                     message: err.message
@@ -82,9 +82,9 @@ module.exports = {
             res.status(200).json(doc);
         });
     },
-    getChatByBook: async (req, res) => {
+    getChatByProduct: async (req, res) => {
         Chat.find({
-            bookId: req.params.id,
+            productId: req.params.id,
             users: req.userId
         }).populate('users', 'username')
             .populate('messages.by', 'username').exec((err, doc) => {
@@ -98,16 +98,16 @@ module.exports = {
             });
     },
     getOrCreateChat: async (req, res) => {
-        const book = await Book.findById(req.body.bookId);
-        if (!book) {
+        const product = await Product.findById(req.body.productId);
+        if (!product) {
             res.status(404).json({
-                message: 'Book not found'
+                message: 'Product not found'
             });
             return;
         }
 
         const existingChat = await Chat.findOne({
-            bookId: req.body.bookId,
+            productId: req.body.productId,
             users: req.userId
         }).populate('users', 'username')
             .populate('messages.by', 'username');
@@ -118,10 +118,10 @@ module.exports = {
         }
 
         const chat = new Chat({
-            bookId: req.body.bookId,
+            productId: req.body.productId,
             users: [
                 req.userId,
-                book.user
+                product.user
             ]
         });
         chat.save().then(doc => {

@@ -27,24 +27,24 @@
       <v-col class="px-4 py-8">
         <v-row class="py-4">
           <h1 class="white--text text-h4 mx-sm-4 mx-md-6 mx-lg-10">
-            Uploaded Books
+            Uploaded Products
           </h1>
         </v-row>
         <v-row>
-          <v-container v-if="books.length > 0">
+          <v-container v-if="products.length > 0">
             <v-layout row wrap>
-              <v-flex xs12 sm6 md4 lg3 v-for="book in books" :key="book.id">
+              <v-flex xs12 sm6 md4 lg3 v-for="product in products" :key="product.id">
                 <BookCard
-                :book="book"
+                :product="product"
                 :inProfile="true"
-                @refresh="getBooks"
-                @editBook="editBook"
+                @refresh="getProducts"
+                @editProduct="editProduct"
               />
               </v-flex>
             </v-layout>
           </v-container>
           <v-container v-else class="text-center">
-            <h2 class="white--text">No books uploaded yet</h2>
+            <h2 class="white--text">No products uploaded yet</h2>
           </v-container>
         </v-row>
       </v-col>
@@ -71,7 +71,7 @@
           </v-col>
         </v-row>
       </v-col>
-      <AddBookForm :isEdit="isEdit" :book="book" @edit="bookEditReq" />
+      <AddBookForm :isEdit="isEdit" :product="product" @edit="productEditReq" />
       <AddResForm :isEdit="isEdit" :resource="resource" @edit="resourceEditReq" />
       <ResDetailsDialog v-if="$store.state.resDetailsDialog" />
     </v-container>
@@ -88,11 +88,11 @@
           username: '',
           email: '',
         },
-        books: [],
+        products: [],
         syllabuss: [],
         resources: [],
         isEdit: false,
-        book: {},
+        product: {},
         syllabus: {},
         resource: {},
       };
@@ -111,9 +111,9 @@
           this.initials = this.user.username.charAt(0).toUpperCase();
         });
       },
-      getBooks() {
-        axiosInstance.get('/books/me').then((response) => {
-          this.books = response.data;
+      getProducts() {
+        axiosInstance.get('/products/me').then((response) => {
+          this.products = response.data;
         });
       },
       getResources() {
@@ -121,19 +121,19 @@
           this.resources = response.data;
         });
       },
-      editBook(book) {
-        this.book = book;
+      editProduct(product) {
+        this.product =product;
         this.$store.commit('setFormDialog', true);
         this.isEdit = true;
       },
-      bookEditReq(payload) {
+      productEditReq(payload) {
         axiosInstance
-          .put(`/books/${this.book._id}`, payload)
+          .put(`/products/${this.product._id}`, payload)
           .then(() => {
             this.$store.commit('loading', false);
             this.$store.commit('setFormDialog', false);
             this.isEdit = false;
-            this.getBooks();
+            this.getProducts();
           })
           .catch((err) => {
             this.$store.commit('loading', false);
@@ -185,7 +185,7 @@
     },
     created() {
       this.getUser();
-      this.getBooks();
+      this.getProducts();
       this.getResources();
     },
   };
