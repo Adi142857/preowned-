@@ -29,20 +29,21 @@
         </div>
       </div>
       <AddBookForm v-if="$store.state.formDialog" @addProduct="addProduct" />
-     
+      <ChatDialog v-if="$store.state.chat.chatDialog" />
     </div>
   </template>
   
   <script>
   import BookCard from '@/components/ProductCard.vue';
   import AddBookForm from '@/components/AddProducts.vue';
+  import ChatDialog from '@/components/ChatDialog.vue';
   import axiosInstance from '@/api';
   export default {
     name: 'ProductsPage',
     components: {
       BookCard,
       AddBookForm,
-
+      ChatDialog,
     },
     data() {
       return {

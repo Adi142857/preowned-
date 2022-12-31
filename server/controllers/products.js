@@ -1,5 +1,6 @@
 const Product = require('../models/product')
 const debug = require('debug')('backend:bookController')
+const Chat = require('../models/chat');
 
 module.exports = {
     getProducts: async (req, res) => {

@@ -15,12 +15,16 @@ import { faCheck, faXmark, faCaretUp, faCaretDown } from '@fortawesome/free-soli
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import 'vue-toast-notification/dist/theme-default.css'
+import VueProfile from "vue-profile";
+
 
 
 // Make BootstrapVue available throughout your project
 Vue.use(BootstrapVue)
 // Optionally install the BootstrapVue icon components plugin
 Vue.use(IconsPlugin)
+
+Vue.use(VueProfile, 'vue-profile')
 
 Vue.use(Router)
 Vue.use(Vuelidate);

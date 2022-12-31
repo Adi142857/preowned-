@@ -24,7 +24,7 @@
         </v-list-item>
         <v-list-item link @click="$router.push('/products')">
           <v-list-item-icon class="justify-center">
-            <v-icon>mdi-school-outline</v-icon>
+            <v-icon>mdi-shopping-outline</v-icon>
           </v-list-item-icon>
           <v-list-item-content>
             <v-list-item-title class="subtitile-1">Products</v-list-item-title>
@@ -40,10 +40,18 @@
         </v-list-item>
         <v-list-item link @click="$router.push('/aboutus')">
           <v-list-item-icon class="justify-center">
-            <v-icon>mdi-school-outline</v-icon>
+            <v-icon>mdi-information-outline</v-icon>
           </v-list-item-icon>
           <v-list-item-content>
             <v-list-item-title class="subtitile-1">About us</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item link @click="$router.push('/profile')">
+          <v-list-item-icon class="justify-center">
+            <v-icon>mdi-account-details-outline</v-icon>
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-list-item-title class="subtitile-1">Profile</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
         <v-divider />
@@ -70,7 +78,7 @@
           v-if="$store.state.isLoggedIn"
         >
         <v-list-item-icon class="justify-center">
-            <v-icon>mdi-school-outline</v-icon>
+            <v-icon>mdi-logout-variant theme--dark</v-icon>
           </v-list-item-icon>
           <v-list-item-content>
             <v-list-item-title class="subtitile-1">Logout</v-list-item-title>
@@ -127,6 +135,7 @@
 </template>
 
 <script>
+
 export default {
   data: () => ({
     drawer: null,

@@ -17,33 +17,35 @@
         {{requirement.description}}
       </div> -->
     </v-card-text>
+    <!-- <v-card-actions v-if="inProfile" class="justify-space-around">
+        <v-btn color="blue" class="white--text" @click="$emit('editProduct', product)">Edit</v-btn>
+        <v-btn color="red" @click="deleteProduct" class="white--text">Delete</v-btn>
+        <v-btn color="green" class="white--text" @click="$router.push(`/chat/${product._id}`)">Chats</v-btn>
+    </v-card-actions> -->
     <v-card-actions>
-      <v-btn
-        outlined
+      <v-btn 
+      color="green"
+        class="white--text"
         rounded
-        text
-        color="teal accent-4"
         @click="reveal = true"
-        class="mx-2"
+       
       >
-        Learn More
+         More
       </v-btn>
         <v-btn
-        outlined
+        color="blue"
+        class="white--text"
         rounded
-        text
         @click="$emit('editRequirement', requirement)"
-        color="primary"
         v-if="inProfile"
       >
         Edit
       </v-btn>
       <v-btn
-        outlined
+        color="red"
+        class="white--text"
         rounded
-        text
         @click="deleteRequirement"
-        color="error"
         v-if="inProfile"
       >
         Delete

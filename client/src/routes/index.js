@@ -7,6 +7,7 @@ import ProductsPage from '../views/ProductsPage.vue'
 import ProfileView from '../views/ProfileView.vue'
 import RequirementPage from '../views/RequirementPage.vue'
 import Details from '../components/DetailsPage.vue'
+import Message from '../views/ChatView.vue'
 
 Vue.use(VueRouter)
 
@@ -40,7 +41,12 @@ const routes = [
         path: '/aboutus',
         name: 'details',
         component: Details,
-    }
+    },
+    {
+        path: '/chat/:id',
+        name: 'chat',
+        component: Message,
+      }
 ]
 
 const router = new VueRouter({

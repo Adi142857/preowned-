@@ -159,6 +159,8 @@ export default {
 .signup{
 	position: relative;
 	width:100%;
+	/* transform: translateY(+180px); */
+	transition: .8s ease-in-out;
 	height: 100%;
 }
 label{
@@ -214,15 +216,21 @@ button:hover{
 	color: #573b8a;
 	transform: scale(.6);
 }
+#chk:checked ~ .signup{
+	transform: translateY(+500px);
+}
 
 #chk:checked ~ .login{
 	transform: translateY(-500px);
 }
+
 #chk:checked ~ .login label{
 	transform: scale(1);	
 }
-#chk:checked ~ .signup label{
-	transform: scale(.6);
-}
+
+
+/* #chk:checked ~ .signup label{
+	transform: scale(1);
+} */
 
 </style>

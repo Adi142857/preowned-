@@ -13,7 +13,7 @@
                     <div class="section-title">WHAT WE DO</div>
                     <h2>Find the  right influencers</h2>
                     <p>We connect people from various firms to collaborate and help peers to get their required products at the cheapest of prices. Buy Used Products Online Used Products can offer the same quality as new ones in the event that you have the persistence to look for the best alternatives to buy used products online. Presently is dependably a decent time to begin sparing cash. Contingent upon the quality and age of the thing, purchasing Used can spare 10%-80% off the business retail cos</p>
-                    <a class="btn-solid-reg" href="#">Get quote</a>
+                    <a class="btn-solid-reg" href="#">Get started</a>
                 </div> 
             </div> 
         </div>

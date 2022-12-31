@@ -32,7 +32,7 @@
                     <div class="card">
                         <div>
                           <v-card class="mx-auto" max-width="344">
-                            <v-img src="https://img.freepik.com/free-vector/chatbot-customer-service-abstract-concept_335657-3037.jpg?w=740&t=st=1672061923~exp=1672062523~hmac=eea91f4c71f9c44c6466d31eb09556b8ae80b8083dd808e6a94e9655a953037f" height="200px"></v-img>
+                            <v-img src="https://img.freepik.com/free-vector/chatbot-customer-service-abstract-concept_335657-3037.jpg?w=740&t=st=1672061923~exp=1672062523~hmac=eea91f4c71f9c44c6466d31eb09556b8ae80b8083dd808e6a94e9655a953037f" height="200px" @click="$router.push('/products')"></v-img>
                             <v-card-title>Top products and exchanges</v-card-title>
                             <!-- <v-card-subtitle>1,000 miles of wonder</v-card-subtitle> -->
                             <v-card-actions>
@@ -46,7 +46,7 @@
                               <div v-show="show1">
                                 <v-divider/>
                                 <v-card-text>
-                                  I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier, not with all the bed making you'll be doing. Then we'll go with that data file! Hey, you add a one and two zeros to that or we walk! You're going to do his laundry? I've got to find a way to escape.
+                                  See the top products and exchanges in the market. We have a wide range of products and exchanges to choose from.
                                 </v-card-text>
                               </div>
                             </v-expand-transition>
@@ -56,9 +56,9 @@
                     <div class="card">
                       <div>
                           <v-card class="mx-auto" max-width="344">
-                            <v-img src="https://img.freepik.com/free-vector/list-concept-illustration_114360-1320.jpg?w=740&t=st=1672062040~exp=1672062640~hmac=a0c17fbdef3a9030109d6d331d0b6d13806d52e4dc85f0fb59863087200c302b" height="200px"></v-img>
+                            <v-img src="https://img.freepik.com/free-vector/list-concept-illustration_114360-1320.jpg?w=740&t=st=1672062040~exp=1672062640~hmac=a0c17fbdef3a9030109d6d331d0b6d13806d52e4dc85f0fb59863087200c302b" height="200px"  @click="$router.push('/requirements')"></v-img>
                             <v-card-title>Upload your requirements</v-card-title>
-                            <v-card-subtitle>1,000 miles of wonder</v-card-subtitle>
+                            
                             <v-card-actions>
                               <v-btn  color="#1A237E" text>Explore</v-btn>
                               <v-spacer/>
@@ -70,7 +70,7 @@
                               <div v-show="show2">
                                 <v-divider/>
                                 <v-card-text>
-                                  I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier, not with all the bed making you'll be doing. Then we'll go with that data file! Hey, you add a one and two zeros to that or we walk! You're going to do his laundry? I've got to find a way to escape.
+                                  Upload your requirements and get the best offers from the sellers. We have a wide range of products and exchanges to choose from.
                                 </v-card-text>
                               </div>
                             </v-expand-transition>
@@ -80,10 +80,9 @@
                     
                     <div class="card">
                       <div>
-                          <v-card class="mx-auto" max-width="344">
-                            <v-img src="https://img.freepik.com/free-vector/teamwork-concept-landing-page_52683-20165.jpg?w=740&t=st=1672130327~exp=1672130927~hmac=576d1682f5b9169d48e84b1b2cbd4492bd063d4c06f0cc8971c8a5f8e208860d" height="200px"></v-img>
+                          <v-card class="mx-auto" max-width="344" >
+                            <v-img src="https://img.freepik.com/free-vector/teamwork-concept-landing-page_52683-20165.jpg?w=740&t=st=1672130327~exp=1672130927~hmac=576d1682f5b9169d48e84b1b2cbd4492bd063d4c06f0cc8971c8a5f8e208860d" height="200px" @click="$router.push('/aboutus')"></v-img>
                             <v-card-title>About us</v-card-title>
-                            <v-card-subtitle>1,000 miles of wonder</v-card-subtitle>
                             <v-card-actions>
                               <v-btn  color="#1A237E" text>Explore</v-btn>
                               <v-spacer/>
@@ -95,7 +94,7 @@
                               <div v-show="show3">
                                 <v-divider/>
                                 <v-card-text>
-                                  I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier, not with all the bed making you'll be doing. Then we'll go with that data file! Hey, you add a one and two zeros to that or we walk! You're going to do his laundry? I've got to find a way to escape.
+                                  We are a team of professionals who are passionate about helping people. We are here to help you with your requirements.
                                 </v-card-text>
                               </div>
                             </v-expand-transition>
@@ -165,8 +164,8 @@
   </div>
   <!-- Copyright -->
   <div class="text-center text-white p-3" style="background-color: #1A237E;">
-    © 2020 Copyright:
-    <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+    © 2022 Copyright:
+    <a class="text-white" href="">Preowned.com</a>
   </div>
   <!-- Copyright -->
         </footer>
@@ -194,6 +193,9 @@ body{
 .explore{
   text-align: center;
   font-weight: 600;
+}
+.card{
+    cursor: pointer;
 }
 
 </style>
