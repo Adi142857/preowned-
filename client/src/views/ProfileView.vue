@@ -78,7 +78,7 @@
             <v-container v-if="products.length > 0">
               <v-layout row wrap>
                 <v-flex xs12 sm6 md4 lg3 v-for="product in products" :key="product.id">
-                  <BookCard
+                  <ProductCard
                   :product="product"
                   :inProfile="true"
                   @refresh="getProducts"
@@ -115,7 +115,7 @@
             </v-col>
           </v-row>
           </v-col>
-          <AddBookForm :isEdit="isEdit" :product="product" @edit="productEditReq" />
+          <AddProductForm :isEdit="isEdit" :product="product" @edit="productEditReq" />
           <AddResForm :isEdit="isEdit" :requirement="requirement" @edit="requirementEditReq" />
           <ResDetailsDialog v-if="$store.state.resDetailsDialog" />
           </v-container>
@@ -214,8 +214,8 @@ import axiosInstance from '@/api';
       };
     },
     components: {
-      BookCard: () => import('@/components/ProductCard.vue'),
-      AddBookForm: () => import('@/components/AddProducts.vue'),
+      ProductCard: () => import('@/components/ProductCard.vue'),
+      AddProductForm: () => import('@/components/AddProducts.vue'),
       AddResForm: () => import('@/components/AddRequirements.vue'),
       ResourceCard: () => import('@/components/RequirementsCard.vue'),
       ResDetailsDialog: () => import('@/components/ReqDialog.vue'),

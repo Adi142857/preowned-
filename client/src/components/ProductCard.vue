@@ -1,5 +1,5 @@
 <template>
-    <v-card text class="book__card text-center ma-3">
+    <v-card text class="product__card text-center ma-3">
       <v-responsive :aspect-ratio="1.5">
         <v-img
           :src="product.image"

@@ -2,7 +2,7 @@ const axios = require('axios')
 
 
 const axiosInstance = axios.create({
-    baseURL:'https://preowned-services.onrender.com/api',
+    baseURL: process.env.VUE_APP_API_URL,
 })
 
 

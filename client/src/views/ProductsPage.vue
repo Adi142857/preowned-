@@ -1,11 +1,11 @@
 <template>
     <div>
-      <div class="book">
-        <div class="book__header">
-          <h1 class="book__title">Available products</h1>
+      <div class="product">
+        <div class="product__header">
+          <h1 class="product__title">Available products</h1>
           <v-btn
             v-if="this.$store.state.isLoggedIn"
-            class="book__button"
+            class="product__button"
             @click="$store.commit('setFormDialog', true)"
           >
             Add
@@ -14,11 +14,11 @@
         <v-container v-if="products.length > 0">
           <v-layout row wrap>
             <v-flex xs12 sm6 md4 lg3 v-for="product in products" :key="product.id">
-              <BookCard :product="product" />
+              <ProductCard :product="product" />
             </v-flex>
           </v-layout>
         </v-container>
-        <div v-else class="book__empty">
+        <div v-else class="product__empty">
           <v-progress-circular
             indeterminate
             color="blue"
@@ -28,21 +28,21 @@
           <span v-else>No products as of now</span>
         </div>
       </div>
-      <AddBookForm v-if="$store.state.formDialog" @addProduct="addProduct" />
+      <AddProductForm v-if="$store.state.formDialog" @addProduct="addProduct" />
       <ChatDialog v-if="$store.state.chat.chatDialog" />
     </div>
   </template>
   
   <script>
-  import BookCard from '@/components/ProductCard.vue';
-  import AddBookForm from '@/components/AddProducts.vue';
+  import ProductCard from '@/components/ProductCard.vue';
+  import AddProductForm from '@/components/AddProducts.vue';
   import ChatDialog from '@/components/ChatDialog.vue';
   import axiosInstance from '@/api';
   export default {
     name: 'ProductsPage',
     components: {
-      BookCard,
-      AddBookForm,
+      ProductCard,
+      AddProductForm,
       ChatDialog,
     },
     data() {
@@ -85,7 +85,7 @@
   </script>
   
   <style scoped>
-  .book {
+  .product {
     width: 100%;
     height: 100%;
     display: flex;
@@ -95,7 +95,7 @@
     padding-top: 100px;
     min-height: 100vh;
   }
-  .book__header {
+  .product__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -104,15 +104,15 @@
     padding: 0 20px;
     margin-bottom: 20px;
   }
-  .book__title {
+  .product__title {
     font-size: 2rem;
     color: rgb(31, 27, 27);
   }
-  .book__empty {
+  .product__empty {
     font-size: 1.5rem;
     color: rgb(22, 20, 20);
   }
-  .book__grid {
+  .product__grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -120,7 +120,7 @@
     width: 100%;
     height: auto;
   }
-  .book__button {
+  .product__button {
     background-color: rgb(28, 26, 26);
     color: #131418;
     border: none;

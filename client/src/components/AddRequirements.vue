@@ -11,7 +11,7 @@
               v-model="title"
               outlined
               dense
-              prepend-inner-icon="mdi-book"
+              prepend-inner-icon="mdi-shopping"
               :rules="rules"
             />
             <v-text-field

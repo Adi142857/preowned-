@@ -115,7 +115,7 @@
       <!-- Facebook -->
       <a
         class="btn btn-link btn-floating btn-lg text-white m-1"
-        href="#!"
+        href="https://www.facebook.com/"
         role="button"
         data-mdb-ripple-color="dark"
         ><i class="fab fa-facebook-f"></i
@@ -124,7 +124,7 @@
       <!-- Twitter -->
       <a
         class="btn btn-link btn-floating btn-lg text-white m-1"
-        href="#!"
+        href="https://twitter.com/"
         role="button"
         data-mdb-ripple-color="dark"
         ><i class="fab fa-twitter"></i
@@ -133,7 +133,7 @@
       <!-- Instagram -->
       <a
         class="btn btn-link btn-floating btn-lg text-white m-1"
-        href="#!"
+        href="https://www.instagram.com/"
         role="button"
         data-mdb-ripple-color="dark"
         ><i class="fab fa-instagram"></i
@@ -142,7 +142,7 @@
       <!-- Linkedin -->
       <a
         class="btn btn-link btn-floating btn-lg text-white m-1"
-        href="#!"
+        href="https://www.linkedin.com/"
         role="button"
         data-mdb-ripple-color="dark"
         ><i class="fab fa-linkedin"></i

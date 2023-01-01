@@ -11,7 +11,7 @@
             v-model="title"
             outlined
             dense
-            prepend-inner-icon="mdi-book"
+            prepend-inner-icon="mdi-shopping"
             :rules="rules"
           />
           <v-text-field
@@ -26,7 +26,7 @@
             label="Description"
             v-model="description"
             prepend-inner-icon="mdi-format-quote-open"
-            placeholder="A short description about the book."
+            placeholder="A short description about the product."
             outlined
             dense
             :rules="rules"

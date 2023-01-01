@@ -5,7 +5,7 @@
           <h1 class="1A237E--text">Requirements</h1>
           <v-btn
             color="#fff"
-            class="book__button"
+            class="product__button"
             @click="() => $store.commit('setResDialog', true)"
             v-if="$store.state.isLoggedIn"
             >Add</v-btn>
@@ -96,7 +96,7 @@
     min-height: 100vh;
     background-color: #fcfafb;
   }
-  .book__button {
+  .product__button {
     background-color: blue;
     color: #131418;
     border: none;
