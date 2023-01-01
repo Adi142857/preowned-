@@ -45,7 +45,7 @@ export default {
     getChats() {
       this.$store.commit('loading', true);
       axiosInstance
-        .get(`/chat/book/${this.$router.currentRoute.params.id}`)
+        .get(`/chat/product/${this.$router.currentRoute.params.id}`)
         .then((response) => {
           this.chats = response.data;
           this.$store.commit('loading', false);

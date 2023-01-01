@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
 const chatSchema = new mongoose.Schema({
-    bookId: {
-        ref: 'Book',
+    productId: {
+        ref: 'Product',
         type: mongoose.Schema.Types.ObjectId
     },
     users: [{

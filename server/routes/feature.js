@@ -13,7 +13,7 @@ router.put('/products/:id', isAuth, updateProduct);
 router.delete('/products/:id', isAuth, deleteProduct);
 
 router.post('/chat/getOrCreateChat', isAuth, getOrCreateChat);
-router.get('/chat/book/:id', isAuth, getChatByProduct);
+router.get('/chat/product/:id', isAuth, getChatByProduct);
 router.get('/chat/:id', isAuth, getChatById);
 router.post('/chat/:id', isAuth, addMessage);
 

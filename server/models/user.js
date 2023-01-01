@@ -16,9 +16,9 @@ const userSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
-    books: [{
+    productss: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Book'
+        ref: 'Product'
     }]
 }, {
     timestamps: true
