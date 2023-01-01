@@ -1,5 +1,5 @@
 const Product = require('../models/product')
-const debug = require('debug')('backend:bookController')
+const debug = require('debug')('backend:productController')
 const Chat = require('../models/chat');
 
 module.exports = {

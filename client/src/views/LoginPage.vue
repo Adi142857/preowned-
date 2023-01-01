@@ -10,7 +10,7 @@
 					<input type="text" id="text" name="txt" placeholder="User name" required="" v-model="username">
 					<input type="email" id="email" name="email" placeholder="Email" required="" v-model="email">
 					<input type="password" id="password" name="pswd" placeholder="Password" required="" v-model="password" autocomplete="on">
-					<input type="password2" id="password2" name="pswd" placeholder="Confirm Password" required="" v-model="password2" autocomplete="on">
+					<input type="password" id="password2" name="pswd" placeholder="Confirm Password" required="" v-model="password2" autocomplete="on">
 					<button @click="register">
 						<v-progress-circular indeterminate color="white" size="20" v-if="$store.state.loading"></v-progress-circular>
 						<!-- <v-progress-linear :indeterminate="loading" absolute bottom color="deep-purple accent-4" v-if="$store.state.loading"/> -->

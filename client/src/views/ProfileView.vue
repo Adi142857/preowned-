@@ -249,31 +249,11 @@ import axiosInstance from '@/api';
             this.$store.commit('loading', false);
             this.$store.commit('setFormDialog', false);
             this.isEdit = false;
+            this.$store.commit('flashSuccess', 'Product Edited Successfully');
             this.getProducts();
           })
           .catch((err) => {
             this.$store.commit('loading', false);
-            console.log(err);
-          });
-      },
-      editSyllabus(syllabus) {
-        this.syllabus = syllabus;
-        this.$store.commit('setSyllabusDialog', true);
-        this.isEdit = true;
-      },
-      syllabusEditReq(payload) {
-        axiosInstance
-          .put(`/syllabus/${this.syllabus._id}`, payload)
-          .then(() => {
-            this.$store.commit('loading', false);
-            this.$store.commit('setSyllabusDialog', false);
-            this.isEdit = false;
-            this.$store.commit('flashSuccess', 'Syllabus Edited Successfully');
-            this.getSyllabus();
-          })
-          .catch((err) => {
-            this.$store.commit('loading', false);
-            this.$store.commit('flashError', 'Something went wrong');
             console.log(err);
           });
       },
