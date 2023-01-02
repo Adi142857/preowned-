@@ -205,11 +205,9 @@ import axiosInstance from '@/api';
           email: '',
         },
         products: [],
-        syllabuss: [],
         requirements: [],
         isEdit: false,
         product: {},
-        syllabus: {},
         requirement: {},
       };
     },

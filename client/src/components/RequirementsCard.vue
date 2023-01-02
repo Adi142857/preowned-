@@ -125,7 +125,7 @@ methods:{
       .delete(`/requirements/${this.requirement._id}`)
       .then(() => {
       this.$emit('refresh');
-      this.$store.commit('flashSuccess', 'Syllabus Deleted Successfully');
+      this.$store.commit('flashSuccess', 'Requirement Deleted Successfully');
       })
       .catch((err) => {
       console.log(err);

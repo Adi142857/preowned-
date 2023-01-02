@@ -75,7 +75,7 @@
             this.$store.commit('loading', false);
             this.$store.commit('setResDialog', false);
             this.getRequirements();
-            this.$store.commit('flashSuccess', 'Syllabus Added Successfully');
+            this.$store.commit('flashSuccess', 'Requirement Added Successfully');
           })
           .catch((error) => {
             console.log(error);

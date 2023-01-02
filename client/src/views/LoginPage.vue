@@ -5,7 +5,7 @@
 		<input type="checkbox" id="chk" aria-hidden="true">
 
 			<div class="signup">
-				<form @click.prevent>
+				<form @submit.prevent="signup">
 					<label for="chk" aria-hidden="true">Sign up</label>
 					<input type="text" id="text" name="txt" placeholder="User name" required="" v-model="username">
 					<input type="email" id="email" name="email" placeholder="Email" required="" v-model="email">
@@ -213,11 +213,8 @@ button:hover{
 	transition: .8s ease-in-out;
 }
 .login label{
-	color: #573b8a;
+	color: #1A237E;
 	transform: scale(.6);
-}
-#chk:checked ~ .signup{
-	transform: translateY(+500px);
 }
 
 #chk:checked ~ .login{

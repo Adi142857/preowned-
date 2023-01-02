@@ -84,7 +84,7 @@
           .delete(`/products/${this.product._id}`)
           .then(() => {
             this.$emit('refresh');
-            this.$store.commit('flashSuccess', 'Syllabus Deleted Successfully');
+            this.$store.commit('flashSuccess', 'Product Deleted Successfully');
           })
           .catch((error) => {
             console.log(error);
