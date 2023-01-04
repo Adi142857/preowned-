@@ -19,9 +19,11 @@
       <div class="text--primary ml-2 mt-2" v-for="link in requirement.links" :key="link">
         <b>Phone no</b> - {{ link }}
       </div>
+     
       <div class="v-card-subtitle class ml-2 mt-3">
-        Posted at - {{date}}
+        Posted by <b>{{requirement.author}}</b> at {{date}}
       </div>
+      
     </v-card-text>
 
     <v-card-actions>

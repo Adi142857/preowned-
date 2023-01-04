@@ -13,6 +13,9 @@ const requirementSchema = new moongose.Schema({
         type: String,
         required: true
     },
+    author: {
+        type: String,
+    },
     category: [{
         type: String,
         required: true

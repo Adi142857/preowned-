@@ -54,6 +54,8 @@
               placeholder="Add links seperated by commas"
               :rules="rules"
             />
+           
+            
             <v-col class="text-right">
               <v-btn color="white" @click="$store.commit('setResDialog', false)"
                 >Cancel</v-btn
@@ -75,13 +77,18 @@
   </template>
   
   <script>
+  import axiosInstance from '@/api';
   export default {
     data() {
       return {
         title: '',
         category: [],
         links: '',
+        author: '',
         description: '',
+        user: {
+          username: '',
+        },
         rules: [(v) => !!v || 'This field is required'],
       };
     },
@@ -104,11 +111,18 @@
             title: this.title,
             description: this.description,
             category: this.category,
+            author: this.user.username.charAt(0).toUpperCase() + this.user.username.slice(1),
             links: linksArray,
           };
           if (this.isEdit) this.$emit('edit', toEdit);
           else this.$emit('addRes', toEdit);
         }
+      },
+      getUser() {
+        axiosInstance.get('/auth/me').then((response) => {
+          this.user = response.data.user;
+          this.initials = this.user.username.charAt(0).toUpperCase();
+        });
       },
     },
     watch: {
@@ -123,6 +137,9 @@
         },
         immediate: true,
       },
+    },
+    created() {
+      this.getUser();
     },
   };
   </script>
