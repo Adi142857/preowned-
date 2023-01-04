@@ -4,37 +4,31 @@
     max-width="344"
   >
     <v-card-text>
-      <div class="mx-2">{{date}}</div>
-      <p class="text-h4 text--primary mx-2">
+      <!-- <div>Word of the Day</div> -->
+      <h3 class="req-title ml-3">
         {{requirement.title}}
-      </p>
-      <v-card-actions>
-      <v-chip small color="blue" class="mx-1" v-for="tag in category" :key="tag">
-        {{ tag }}
-      </v-chip>
+      </h3>
+       <v-card-actions>
+        <v-chip small color="blue" text-white class="mx-1" v-for="tag in category" :key="tag">
+          {{ tag }}
+        </v-chip>
       </v-card-actions>
-      <!-- <div class="text--primary">
-        {{requirement.description}}
-      </div> -->
+      <div class="text--primary ml-2 mt-2">
+        <b>Requirement</b> - {{requirement.description}}
+      </div>
+      <div class="text--primary ml-2 mt-2" v-for="link in requirement.links" :key="link">
+        <b>Phone no</b> - {{ link }}
+      </div>
+      <div class="v-card-subtitle class ml-2 mt-3">
+        Posted at - {{date}}
+      </div>
     </v-card-text>
-    <!-- <v-card-actions v-if="inProfile" class="justify-space-around">
-        <v-btn color="blue" class="white--text" @click="$emit('editProduct', product)">Edit</v-btn>
-        <v-btn color="red" @click="deleteProduct" class="white--text">Delete</v-btn>
-        <v-btn color="green" class="white--text" @click="$router.push(`/chat/${product._id}`)">Chats</v-btn>
-    </v-card-actions> -->
+
     <v-card-actions>
-      <v-btn 
-      color="green"
-        class="white--text"
-        rounded
-        @click="reveal = true"
-       
-      >
-         More
-      </v-btn>
+      
         <v-btn
         color="blue"
-        class="white--text"
+        class="white--text ml-3"
         rounded
         @click="$emit('editRequirement', requirement)"
         v-if="inProfile"
@@ -53,50 +47,10 @@
       </v-btn>
     </v-card-actions>
 
-    <v-expand-transition>
-      <v-card
-       
-        v-if="reveal"
-        class="transition-fast-in-fast-out v-card--reveal"
-        style="height: 100%;"
-      >
-        <v-card-text class="">
-          <p class="text-h4 text--primary">
-              {{ requirement.title }}
-          </p>
-          <v-chip
-          small
-          color="blue"
-          class="mr-3"
-          v-for="tag in requirement.category"
-          :key="tag"
-        >
-          {{ tag }}
-        </v-chip>
-          <div class="text--primary">
-            About : {{ requirement.description }}
-          </div>
-        </v-card-text>
-        <v-card-actions class="pt-0">
-          <v-btn
-            text
-            color="teal accent-4"
-            @click="reveal = false"
-          >
-            Close
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-expand-transition>
   </v-card>
 </template>
 <style>
-.v-card--reveal {
-bottom: 0;
-opacity: 1 !important;
-position: absolute;
-width: 100%;
-}
+
 </style>
 <script>
 import axiosInstance from '@/api';
@@ -113,9 +67,11 @@ props: {
   },
 },
 data: () => ({
+  initials: '',
   reveal: false,
 }),
 methods:{
+  
   openDetailDialog() {
       this.$store.commit('setResDetailsDialog', true);
       this.$store.commit('setRequirement', this.requirement);
@@ -141,7 +97,8 @@ methods:{
           const date = new Date(this.requirement.createdAt);
           const month = date.toLocaleString('default', { month: 'short' });
           const year = date.getFullYear();
-          return `${month} ${year}`;
+          const day = date.getDate();
+          return `${day} ${month} ${year}`;
       },
   },
 }

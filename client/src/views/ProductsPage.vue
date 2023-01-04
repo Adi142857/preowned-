@@ -6,8 +6,7 @@
           <v-btn
             v-if="this.$store.state.isLoggedIn"
             class="product__button"
-            @click="$store.commit('setFormDialog', true)"
-          >
+            @click="$store.commit('setFormDialog', true)">
             Add
           </v-btn>
         </div>

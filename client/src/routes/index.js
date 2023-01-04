@@ -51,23 +51,24 @@ const routes = [
 
 const router = new VueRouter({
     mode: 'history',
+    base: process.env.BASE_URL,
     routes
   });
 
-router.beforeEach((to, from, next) => {
-const publicPages = ['/login', '/register', '/'];
-const authRequired = !publicPages.includes(to.path);
-const isAuth = store.state.isLoggedIn;
-
-if (authRequired && !isAuth) {
-    return next('/login');
-}
-
-if ((to.path === '/login' || to.path === '/register') && isAuth) {
-    return next('/');
-}
-
-next();
-
-});
-export default router;
+  router.beforeEach((to, from, next) => {
+    const restrictedPages = ['/profile'];
+    const authRequired = restrictedPages.includes(to.path);
+    const isAuth = store.state.isLoggedIn;
+  
+    if (authRequired && !isAuth) {
+      return next('/login');
+    }
+  
+    if ((to.path === '/login' || to.path === '/register') && isAuth) {
+      return next('/');
+    }
+  
+    next();
+  });
+  
+  export default router

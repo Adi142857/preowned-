@@ -74,7 +74,7 @@
             <v-btn color="white" @click="$store.commit('setFormDialog', false)"
               >Cancel</v-btn
             >
-            <v-btn color="red" @click="submit" class="ml-3">
+            <v-btn color="blue" @click="submit" class="ml-3">
               <!-- show a loading progress -->
               <v-progress-circular
                 v-if="$store.state.loading"

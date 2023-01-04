@@ -175,8 +175,8 @@ label{
 }
 input{
 	width: 60%;
-	height: 20px;
-	background: #e0dede;
+	height: 24px;
+	background: rgb(255,255,255,93%);
 	justify-content: center;
 	display: flex;
 	margin: 20px auto;

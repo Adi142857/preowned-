@@ -36,7 +36,7 @@
         </v-row>
       </v-container>
       <AddResForm v-if="$store.state.resDialog" @addRes="addRequirement" />
-      <ReqDialog v-if="$store.state.resDetailsDialog" />
+    
 
     </div>
   </template>
@@ -45,7 +45,6 @@
   import axiosInstance from '@/api';
   import AddResForm from '@/components/AddRequirements.vue';
   import ResourceCard from '@/components/RequirementsCard.vue';
-  import ReqDialog from '@/components/ReqDialog.vue';
 
   export default {
     name: 'ResourcesView',
@@ -87,7 +86,7 @@
     mounted() {
       this.getRequirements();
     },
-    components: { AddResForm, ResourceCard, ReqDialog },
+    components: { AddResForm, ResourceCard },
   };
   </script>
   

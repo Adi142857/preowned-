@@ -164,7 +164,7 @@
   </div>
   <!-- Copyright -->
   <div class="text-center text-white p-3" style="background-color: #1A237E;">
-    © 2022 Copyright:
+    © 2023 Copyright: All rights reserved by
     <a class="text-white" href="">Preowned.com</a>
   </div>
   <!-- Copyright -->

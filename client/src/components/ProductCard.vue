@@ -34,14 +34,14 @@
   
       <v-card-actions v-if="!inProfile" class="justify-center pb-4 pt-0">
         <v-btn
-          color="red"
+          color="#004"
           block
           class="mt-2"
           @click="openChat"
           :disabled="$store.state.auth.userId === product.user"
         >
-          <v-icon class="mr-2" color="white">mdi-chat</v-icon>
-          Chat
+          <v-icon class="mr-2 " color="white">mdi-chat</v-icon>
+         <span  class="white--text">CHAT</span>
         </v-btn>
       </v-card-actions>
       <!-- edit and delete button-->
@@ -109,4 +109,8 @@
   };
   </script>
   
-  <style scope></style>
+  <style scope>
+  .product__card {
+    width: 250px;
+  }
+  </style>

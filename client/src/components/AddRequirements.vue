@@ -15,7 +15,7 @@
               :rules="rules"
             />
             <v-text-field
-              label="Description"
+              label="Short description about your requirement"
               v-model="description"
               outlined
               dense
@@ -46,9 +46,9 @@
               </template>
             </v-combobox>
             <v-text-field
-              label="links"
+              label="Phone number/email/Instagram/Whatsapp"
               v-model="links"
-              prepend-inner-icon="mdi-link"
+              prepend-inner-icon="mdi-cellphone"
               outlined
               dense
               placeholder="Add links seperated by commas"
@@ -58,7 +58,7 @@
               <v-btn color="white" @click="$store.commit('setResDialog', false)"
                 >Cancel</v-btn
               >
-              <v-btn color="red" @click="submit" class="ml-3">
+              <v-btn color="blue" @click="submit" class="ml-3">
                 <v-progress-circular
                   v-if="$store.state.loading"
                   indeterminate

@@ -172,8 +172,11 @@ export default {
 </script>
 
 <style scoped>
-.v-application .black {
+.v-application .black{
   background-color: #1A237E !important;
+}
+.v-application .red{
+  background-color: #004 !important;
 }
 .v-toolbar__content {
   background-color: #1A237E;
