@@ -11,7 +11,7 @@
     >
       <v-card dark>
         <v-card-title class="headline">
-          <v-icon class="mr-2" color="white">mdi-chat</v-icon>
+          <v-icon class="mr-2" color="white">mdi-forum</v-icon>
           Chat
           <v-spacer />
           <v-btn
@@ -48,7 +48,7 @@
                     </v-list-item-title>
                   </v-list-item-content>
                   <v-list-item-avatar class="mr-3">
-                    <v-avatar color="brown lighten-2">
+                    <v-avatar color="#004">
                       <span class="white--text">
                         {{ getInitials(message.by.username) }}
                       </span>
@@ -57,7 +57,7 @@
                 </v-row>
                 <v-row v-if="message.by._id !== $store.state.auth.userId">
                   <v-list-item-avatar class="ml-3">
-                    <v-avatar color="brown lighten-2">
+                    <v-avatar color="#034">
                       <span class="white--text">
                         {{ getInitials(message.by.username) }}
                       </span>

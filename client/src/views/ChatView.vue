@@ -15,7 +15,7 @@
           <v-card class="my-3 pa-3" width="100%" dark elevation="4">
             <v-row align-content="center" class="justify-center">
               <v-list-item-icon class="mx-3">
-                <v-icon>mdi-chat</v-icon>
+                <v-icon>mdi-forum</v-icon>
               </v-list-item-icon>
               <v-list-item-content class="mx-3">
                 <v-list-item-title>

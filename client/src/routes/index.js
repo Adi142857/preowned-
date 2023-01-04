@@ -56,7 +56,7 @@ const router = new VueRouter({
   });
 
   router.beforeEach((to, from, next) => {
-    const restrictedPages = ['/profile'];
+    const restrictedPages = ['/profile', '/requirements', '/products'];
     const authRequired = restrictedPages.includes(to.path);
     const isAuth = store.state.isLoggedIn;
   

@@ -1,9 +1,9 @@
 <template>
-    <v-card text class="product__card text-center ma-3">
-      <v-responsive :aspect-ratio="1.5">
+    <v-card text class="product__card text-center ma-3 elevation-7">
+      <v-responsive :aspect-ratio="2.5">
         <v-img
           :src="product.image"
-          height="250"
+          height="200"
           width="170"
           class="mx-auto my-2 rounded-lg elevation-5"
         />
@@ -14,23 +14,27 @@
       </v-card-text>
       <!-- chips of category -->
       <v-card-actions class="px-2 py-0">
-        <v-chip
+        <v-chip small color="blue" text-white class="ml-4"
           v-for="category in categories"
           :key="category"
-          class="ml-4"
-          color="red lighten-4"
-          text-color="grey darken-4"
-          small
-          outlined
         >
           {{ category }}
         </v-chip>
+        <!-- <v-chip small color="blue" text-white class="ml-4"  v-for="category in categories"  :key="category">
+          {{ tag }}
+        </v-chip> -->
       </v-card-actions>
   
       <!-- price -->
       <v-card-actions class="px-6 pt-2 pb-0">
         <div class="black--text text-h6">Rs.{{ product.price }}</div>
       </v-card-actions>
+
+      <!-- description -->
+      <v-card-actions class="px-6 pt-0 pb-0 text-left">
+        <div class="grey--text text-body-2">{{ product.description }}</div>
+      </v-card-actions>
+
   
       <v-card-actions v-if="!inProfile" class="justify-center pb-4 pt-0">
         <v-btn
@@ -40,8 +44,8 @@
           @click="openChat"
           :disabled="$store.state.auth.userId === product.user"
         >
-          <v-icon class="mr-2 " color="white">mdi-chat</v-icon>
-         <span  class="white--text">CHAT</span>
+          <v-icon class="mr-2 " color="white">mdi-forum</v-icon>
+         <span  class="white--text">Message</span>
         </v-btn>
       </v-card-actions>
       <!-- edit and delete button-->
@@ -112,5 +116,8 @@
   <style scope>
   .product__card {
     width: 250px;
+  }
+  span.v-chip__content {
+    color: white;
   }
   </style>
