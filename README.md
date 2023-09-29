@@ -1,2 +1,12 @@
-## Site for preowned products 
-## Link - https://preowned.netlify.app/
+<p align="center">
+   <h1>Site for preowned products</h1><a href="https://noteitpreview.netlify.app/">Try Now!</a>
+</p> 
+
+# Tech Stack
+  - [Vuetify](https://vuetifyjs.com/)
+  - [Vue-bootstrap](https://bootstrap-vue.org/)
+  - [React-md-editor](https://github.com/uiwjs/react-md-editor)
+
+    
+* Run on Gitpod<br><br>
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/Prathamesh010/Noteit)
