@@ -1,5 +1,5 @@
 <p align="center">
-   <h1>Site for preowned products</h1><a href="https://noteitpreview.netlify.app/">Try Now!</a>
+   <h1>Site for preowned products</h1><a href="https://preowned.netlify.app/">Try Now!</a>
 </p> 
 
 # Tech Stack
@@ -9,4 +9,4 @@
 
     
 * Run on Gitpod<br><br>
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/Prathamesh010/Noteit)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/Adi142857/preowned-)
