@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
+  
   "scripts": {
+    "start": "node server.js",
     "dev": "set DEBUG=backend:* & nodemon index.js"
   },
   "author": "Aditya",
@@ -14,7 +16,7 @@
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.7.2"
+    "mongoose": "^7.5.3"
   },
   "devDependencies": {
     "debug": "^4.3.4",

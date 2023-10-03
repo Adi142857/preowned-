@@ -10,12 +10,13 @@ const debug = require('debug')('backend:main');
 const app = express();
 
 // connect to mongodb
+mongoose.set('strictQuery', false);
 mongoose.connect(process.env.VUE_APP_MONGO_DB_URI, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
     debug('Connected to MongoDB');
 }).catch((err) => {
     debug(err);
 });
-
+  
 // middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -26,6 +27,10 @@ app.use(cors({
 
 // routes
 app.use('/api', router)
+
+app.get('/', (req, res) => {
+    res.json({ message: 'Hello' });
+})
 
 // 404 route
 app.use((req, res, next) => {
@@ -47,4 +52,6 @@ app.use((err, req, res, next) => {
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
     debug(`Server started on port ${port}`);
+    console.log('Server started on port 3000')
 });
+
