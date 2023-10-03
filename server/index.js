@@ -10,7 +10,7 @@ const debug = require('debug')('backend:main');
 const app = express();
 
 // connect to mongodb
-mongoose.connect(process.env.MONGO_DB_URI, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
+mongoose.connect(process.env.VUE_APP_MONGO_DB_URI, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
     debug('Connected to MongoDB');
 }).catch((err) => {
     debug(err);

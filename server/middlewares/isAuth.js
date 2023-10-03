@@ -10,7 +10,7 @@ const isAuth = (req, res, next) => {
     const tokenParts = token.split(' ');
     token = tokenParts[1];
     try {
-        const decoded = jwt.verify(token, process.env.JWT_SECRET)
+        const decoded = jwt.verify(token, process.env.VUE_APP_JWT_SECRET)
         if (!decoded)
             return res.status(401).json({ message: 'Invalid token' });
 

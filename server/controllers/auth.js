@@ -62,7 +62,7 @@ module.exports.refreshToken = async (req, res) => {
             return res.status(401).json({ message: 'No refresh token provided' });
         }
 
-        const decoded = jwt.verify(refreshToken, process.env.JWT_SECRET);
+        const decoded = jwt.verify(refreshToken, process.env.VUE_APP_JWT_SECRET);
         if (!decoded) {
             return res.status(401).json({ message: 'Invalid refresh token' });
         }
@@ -95,11 +95,11 @@ module.exports.me = async (req, res) => {
 };
 
 const provideToken = (user) => {
-    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
+    const token = jwt.sign({ id: user._id }, process.env.VUE_APP_JWT_SECRET, {
         expiresIn: 86400 // 24 hours
     });
 
-    const refreshToken = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
+    const refreshToken = jwt.sign({ id: user._id }, process.env.VUE_APP_JWT_SECRET, {
         expiresIn: 604800 // 7 days
     });
 
