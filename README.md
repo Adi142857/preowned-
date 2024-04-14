@@ -5,7 +5,6 @@
 # Tech Stack
   - [Vuetify](https://vuetifyjs.com/)
   - [Vue-bootstrap](https://bootstrap-vue.org/)
-  - [React-md-editor](https://github.com/uiwjs/react-md-editor)
 
     
 * Run on Gitpod<br><br>
